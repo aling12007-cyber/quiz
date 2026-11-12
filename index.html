@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>花開的提問 · Blooming Questions</title>
-<meta name="description" content="八個關於愛、自我與人生的深度提問，可以自己想，也可以和朋友一起聊。8 deep questions about love, self and life. 愛と自分と人生をめぐる8つの問い。">
+<meta name="description" content="八個關於自我與人生的深度提問，可以自己想，也可以和朋友一起聊。8 deep questions about yourself and your life. 自分と人生をめぐる8つの問い。">
 <meta property="og:title" content="花開的提問 · Blooming Questions · 花ひらく問い">
 <meta property="og:description" content="Deep questions to think about and talk over · 中文 / English / 日本語">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -144,19 +144,19 @@ footer .garden{display:block;margin:0 auto;width:min(320px,100%)}
 </main>
 <script>
 const UI={
- zh:{eyebrow:"關於愛、自我與人生的八個提問",title:"花開的提問",lead:"這些問題沒有標準答案。先選最接近你的想法，再看看不同觀點，最後把它帶去和朋友、伴侶聊聊。",
+ zh:{eyebrow:"關於自我與人生的八個提問",title:"花開的提問",lead:"這些問題沒有標準答案。先選最接近你的想法，再看看不同觀點，最後把它帶去和朋友聊聊。",
   qnum:(i,n)=>`第 ${i} 題 / 共 ${n} 題`,src:"參考：",prev:"上一題",next:"下一題",done:"看我的答案",talk:"帶去聊聊",
   more:"你的想法（可不填）",ph:"為什麼選這個？有沒有一段經驗讓你這樣想？",yours:"我的答案",none:"（未作答）",
   closing:"好的問題不一定有答案，但會讓我們更了解自己，也更了解身邊的人。",
   copy:"複製我的答案",copied:"已複製，可以貼給朋友了",copyFail:"無法複製，請手動選取",again:"重新開始",
   privacy:"你的答案只存在這台裝置的瀏覽器裡，不會上傳到任何地方。本內容僅供思考與討論，不能取代專業心理諮商。"},
- en:{eyebrow:"Eight questions about love, self and life",title:"Blooming Questions",lead:"There are no right answers here. Pick what feels closest to you, read another point of view, then take the question to a friend or partner.",
+ en:{eyebrow:"Eight questions about yourself and your life",title:"Blooming Questions",lead:"There are no right answers here. Pick what feels closest to you, read another point of view, then take the question to a friend.",
   qnum:(i,n)=>`Question ${i} of ${n}`,src:"Background: ",prev:"Back",next:"Next",done:"See my answers",talk:"Talk it over",
   more:"Your thoughts (optional)",ph:"Why this one? Is there an experience behind it?",yours:"My answers",none:"(not answered)",
   closing:"A good question doesn’t always have an answer, but it helps us understand ourselves and the people around us.",
   copy:"Copy my answers",copied:"Copied — ready to share",copyFail:"Couldn’t copy — please select the text",again:"Start over",
   privacy:"Your answers stay in this browser on this device and are never uploaded. For reflection and conversation only; not a substitute for professional counseling."},
- ja:{eyebrow:"愛と自分と人生をめぐる8つの問い",title:"花ひらく問い",lead:"正解のない問いです。いちばん近いものを選び、別の見方にもふれてから、友だちやパートナーと話してみてください。",
+ ja:{eyebrow:"自分と人生をめぐる8つの問い",title:"花ひらく問い",lead:"正解のない問いです。いちばん近いものを選び、別の見方にもふれてから、友だちと話してみてください。",
   qnum:(i,n)=>`${n}問中 ${i}問目`,src:"背景：",prev:"前へ",next:"次へ",done:"私の答えを見る",talk:"話してみよう",
   more:"あなたの考え（任意）",ph:"なぜこれを選んだ？そう思うようになった経験はある？",yours:"私の答え",none:"（未回答）",
   closing:"いい問いには、必ずしも答えがありません。でも、自分のことも、まわりの人のことも、もっと深く知るきっかけになります。",
@@ -164,26 +164,26 @@ const UI={
   privacy:"回答はこの端末のブラウザにだけ保存され、どこにも送信されません。考えるきっかけとしての内容であり、専門のカウンセリングの代わりにはなりません。"}
 };
 const QS=[
-{theme:{zh:"愛與改變",en:"Love and change",ja:"愛と変化"},
- q:{zh:"真正愛一個人，應該為對方改變多少？",en:"If you truly love someone, how much should you change for them?",ja:"本当に誰かを愛しているなら、相手のためにどこまで変わるべき？"},
+{theme:{zh:"真實的自己",en:"The real you",ja:"本当の自分"},
+ q:{zh:"在別人面前的你，和一個人獨處時的你，差多少？",en:"How different is the you around others from the you when you’re alone?",ja:"人前の自分と、ひとりでいるときの自分。どれくらい違う？"},
  opts:[
-  {zh:"愛就是接受原本的樣子，不該要求改變",en:"Love means accepting each other as we are",ja:"愛とはありのままを受け入れること。変化を求めるべきではない"},
-  {zh:"習慣可以改，但核心的自己不能讓",en:"Habits can change, but not my core self",ja:"習慣は変えられても、自分の核は譲れない"},
-  {zh:"願意為對方成長，本身就是愛",en:"Being willing to grow for someone is love",ja:"相手のために成長しようとすること自体が愛"},
-  {zh:"不是為對方改，是因為對方讓我想變好",en:"I don’t change for them; they make me want to grow",ja:"相手のためではなく、相手のおかげで良くなりたいと思える"}],
- view:{zh:"心理學家 Arthur Aron 的「自我擴展」研究發現，好的關係會讓我們學到新東西、看見更大的自己。但若改變是出於害怕被拋棄，而不是成長，往往會讓人慢慢失去自己。",en:"Arthur Aron’s “self-expansion” research suggests good relationships help us learn and grow into a bigger self. But change driven by fear of being left, rather than growth, can slowly erase who we are.",ja:"心理学者アーサー・アロンの「自己拡張」研究によると、よい関係は新しいことを学ばせ、自分を広げてくれます。でも、見捨てられる不安から変わろうとすると、少しずつ自分を見失ってしまうことがあります。"},
- src:{zh:"自我擴展理論（Aron & Aron）",en:"Self-expansion theory (Aron & Aron)",ja:"自己拡張理論（アロン夫妻）"},
- talk:{zh:"你曾經為了誰改變過什麼？那個改變現在讓你感覺如何？",en:"Have you ever changed something for someone? How do you feel about that change now?",ja:"誰かのために何かを変えたことはある？その変化を、今どう感じている？"}},
-{theme:{zh:"安全感",en:"Security",ja:"安心感"},
- q:{zh:"在一段關係裡，安全感應該從哪裡來？",en:"In a relationship, where should security come from?",ja:"恋愛の中で、安心感はどこから来るべき？"},
+  {zh:"幾乎一樣，我在哪裡都是我",en:"Almost the same — I’m me everywhere",ja:"ほとんど同じ。どこにいても私は私"},
+  {zh:"差很多，我常常在扮演別人期待的樣子",en:"Very different — I often play the role others expect",ja:"かなり違う。期待される役を演じていることが多い"},
+  {zh:"看場合，工作和生活的我不太一樣",en:"It depends — work me and home me differ",ja:"場面による。仕事とプライベートでは違う"},
+  {zh:"我也不確定哪一個才是真正的我",en:"I’m not even sure which one is the real me",ja:"どちらが本当の自分か、自分でもわからない"}],
+ view:{zh:"「真實性」研究發現，能在生活中表現出真實的自己，和較高的幸福感、較低的壓力有關。在不同場合調整自己很正常，但如果長期覺得「我一直在演」，通常代表某些需要被壓抑了。",en:"Research on authenticity finds that living true to yourself is linked to greater well-being and less stress. Adjusting to different settings is normal, but if you often feel “I’m always performing,” some of your needs may be getting pushed down.",ja:"「本来性（オーセンティシティ）」の研究では、自分らしくいられることが高い幸福感やストレスの少なさと関係しているとされています。場面に合わせるのは自然なことですが、「いつも演じている」と感じるなら、何かのニーズを抑え込んでいるサインかもしれません。"},
+ src:{zh:"真實性研究（Kernis & Goldman；Wood 等人）",en:"Authenticity research (Kernis & Goldman; Wood et al.)",ja:"本来性の研究（カーニス＆ゴールドマン／ウッドら）"},
+ talk:{zh:"在誰面前，你最能放心做自己？那個人做了什麼，讓你感到自在？",en:"Around whom can you most be yourself? What do they do that makes you feel at ease?",ja:"誰の前でいちばん自分らしくいられる？その人の何が、あなたを安心させている？"}},
+{theme:{zh:"獨處",en:"Being alone",ja:"ひとりの時間"},
+ q:{zh:"一個人待著的時候，你比較常覺得孤單，還是自在？",en:"When you’re by yourself, do you usually feel lonely or at peace?",ja:"ひとりでいるとき、さびしいと感じることが多い？それとも心地いい？"},
  opts:[
-  {zh:"應該完全靠自己給自己",en:"Entirely from myself",ja:"完全に自分で自分に与えるもの"},
-  {zh:"伴侶有責任讓我安心",en:"My partner is responsible for making me feel safe",ja:"パートナーには安心させる責任がある"},
-  {zh:"一半來自自己，一半來自對方",en:"Half from me, half from them",ja:"半分は自分、半分は相手から"},
-  {zh:"來自兩個人一起建立的信任",en:"From the trust we build together",ja:"二人で築いた信頼から"}],
- view:{zh:"依附研究發現，人天生需要親近的人作為「安全基地」，所以完全不需要對方並不現實。但只靠對方給，關係又會變得很重。研究稱之為「依賴的悖論」：需要被好好回應的人，反而更能獨立。",en:"Attachment research shows we’re wired to need close people as a “secure base,” so needing no one is unrealistic. Yet relying only on a partner makes a relationship heavy. Researchers call it the “dependency paradox”: people whose needs are met become more independent, not less.",ja:"愛着研究によれば、人は身近な人を「安全基地」として必要とするようにできています。だから誰も必要としないのは現実的ではありません。一方で、相手だけに頼ると関係は重くなります。研究ではこれを「依存のパラドックス」と呼び、ニーズが満たされた人ほど自立できるとしています。"},
- src:{zh:"依附理論（Bowlby；Levine & Heller《依附》）",en:"Attachment theory (Bowlby; Levine & Heller, Attached)",ja:"愛着理論（ボウルビィ／レヴィン＆ヘラー『Attached』）"},
- talk:{zh:"你最有安全感的一段關係（不一定是愛情），對方做了什麼？",en:"Think of the relationship where you felt safest (not necessarily romantic). What did that person do?",ja:"いちばん安心できた関係（恋愛に限らず）で、相手は何をしてくれた？"}},
+  {zh:"孤單，我需要有人在身邊",en:"Lonely — I need people around",ja:"さびしい。誰かにそばにいてほしい"},
+  {zh:"自在，獨處讓我充電",en:"At peace — being alone recharges me",ja:"心地いい。ひとりの時間で充電できる"},
+  {zh:"一開始自在，太久就會不安",en:"Fine at first, uneasy if it lasts too long",ja:"最初は心地いいけど、長いと不安になる"},
+  {zh:"我很少真的一個人，總是在滑手機",en:"I’m rarely truly alone — I’m always on my phone",ja:"本当にひとりになることは少なく、いつもスマホを見ている"}],
+ view:{zh:"研究把「獨處」和「孤單」分開看：孤單是想要連結卻得不到，獨處則是自己選擇的安靜時光。研究發現，主動選擇的獨處能讓情緒平靜下來，也有助於自我反思和創造力。",en:"Researchers separate solitude from loneliness: loneliness is wanting connection and not having it, while solitude is quiet time you choose. Studies find chosen solitude calms emotions and supports reflection and creativity.",ja:"研究では「孤独（さびしさ）」と「ひとりの時間」を分けて考えます。さびしさはつながりを求めても得られない状態、ひとりの時間は自分で選んだ静かな時間です。自ら選んだひとりの時間は、気持ちを落ち着かせ、内省や創造性を助けることがわかっています。"},
+ src:{zh:"獨處研究（Nguyen, Ryan & Deci）",en:"Solitude research (Nguyen, Ryan & Deci)",ja:"ひとりの時間の研究（グエン、ライアン＆デシ）"},
+ talk:{zh:"如果有一整天只屬於自己，不用手機，你會怎麼過？",en:"If you had a whole day to yourself with no phone, how would you spend it?",ja:"スマホなしで、まる一日自分だけの時間があったら、どう過ごす？"}},
 {theme:{zh:"理解與讚美",en:"Understood or admired",ja:"理解と称賛"},
  q:{zh:"如果只能選一個，你想被深深理解，還是被大家欣賞？",en:"If you could only have one: to be deeply understood, or widely admired?",ja:"どちらか一つなら、深く理解されたい？それとも多くの人に称賛されたい？"},
  opts:[
@@ -204,16 +204,26 @@ const QS=[
  view:{zh:"自我決定理論指出，長期的幸福感來自三種需要：自主（自己選擇）、能力（覺得自己做得到）和連結（與人有親密關係）。外在成就本身不一定帶來幸福，關鍵是那是不是你自己想要的。",en:"Self-determination theory says lasting well-being comes from three needs: autonomy (choosing for yourself), competence (feeling capable) and relatedness (close connection). Outward achievement doesn’t guarantee happiness; what matters is whether it’s what you actually want.",ja:"自己決定理論によると、長く続く幸福感は三つの欲求から生まれます。自律性（自分で選ぶこと）、有能感（自分にはできると感じること）、関係性（人と親しくつながること）です。外から見える成功が幸せを保証するわけではなく、それが本当に自分の望みかどうかが大切です。"},
  src:{zh:"自我決定理論（Deci & Ryan）",en:"Self-determination theory (Deci & Ryan)",ja:"自己決定理論（デシ＆ライアン）"},
  talk:{zh:"你心中「活得好」的樣子，是你自己想要的，還是別人告訴你的？",en:"Is your picture of “living well” something you want, or something you were told to want?",ja:"あなたの思う「よく生きる」は、自分の望み？それとも誰かに言われてきたもの？"}},
-{theme:{zh:"伴侶的過去",en:"A partner’s past",ja:"相手の過去"},
- q:{zh:"伴侶的過去，例如前任，你想知道多少？",en:"How much do you want to know about your partner’s past, like their exes?",ja:"パートナーの過去（元恋人など）を、どこまで知りたい？"},
+{theme:{zh:"害怕失敗",en:"Fear of failure",ja:"失敗への不安"},
+ q:{zh:"如果確定不會失敗，你最想去做什麼？是什麼讓你到現在還沒做？",en:"If you knew you couldn’t fail, what would you do? What has stopped you so far?",ja:"絶対に失敗しないとわかっていたら、何をしたい？今までそれをしなかったのはなぜ？"},
  opts:[
-  {zh:"越少越好，過去就讓它過去",en:"As little as possible; the past is past",ja:"知らないほうがいい。過去は過去"},
-  {zh:"想知道全部，才有安全感",en:"Everything — that’s how I feel safe",ja:"全部知りたい。そのほうが安心できる"},
-  {zh:"知道重要的事就好，細節不需要",en:"The important things, not the details",ja:"大事なことだけで、細かいことはいらない"},
-  {zh:"想知道，但知道了又會難過",en:"I want to know, but knowing makes me sad",ja:"知りたいけど、知ると悲しくなる"}],
- view:{zh:"研究發現，對伴侶過去的「回溯性嫉妒」很常見，尤其在越在乎的時候越明顯。它多半和現在的不安有關，而不是過去本身。了解對方從過去學到什麼，通常比知道細節更有幫助。",en:"“Retroactive jealousy” about a partner’s past is common, and often strongest when we care most. It usually reflects present insecurity more than the past itself. Knowing what someone learned from their past tends to help more than knowing the details.",ja:"相手の過去への「遡及的嫉妬」はよくあることで、相手を大切に思うほど強くなりがちです。多くの場合、それは過去そのものより今の不安と関係しています。細かい出来事より、相手が過去から何を学んだかを知るほうが助けになります。"},
- src:{zh:"嫉妒與關係研究",en:"Research on jealousy in relationships",ja:"恋愛における嫉妬の研究"},
- talk:{zh:"知道伴侶的過去，對你來說是安心還是不安？為什麼？",en:"Does knowing a partner’s past make you feel calmer or more uneasy? Why?",ja:"相手の過去を知ることは、あなたにとって安心？それとも不安？それはなぜ？"}},
+  {zh:"怕別人怎麼看我",en:"Worrying what others will think",ja:"人にどう思われるかが怖い"},
+  {zh:"怕失敗了，證明我不夠好",en:"Fear that failing would prove I’m not good enough",ja:"失敗したら、自分がダメだと証明される気がする"},
+  {zh:"現實條件不允許，例如錢或時間",en:"Practical limits, like money or time",ja:"お金や時間など、現実的な条件"},
+  {zh:"我其實還不知道自己想做什麼",en:"I honestly don’t know yet what I want to do",ja:"実はまだ、何をしたいのかわからない"}],
+ view:{zh:"心理學家 Carol Dweck 的研究發現，把失敗看成「我不夠好」的人，比較容易逃避挑戰；把失敗看成「我還在學」的人，比較願意嘗試，也成長得更多。很多時候擋住我們的，不是能力，而是害怕被評價。",en:"Carol Dweck’s research finds that people who see failure as proof they’re “not good enough” tend to avoid challenges, while those who see it as “still learning” try more and grow more. Often what holds us back isn’t ability, but fear of being judged.",ja:"キャロル・ドゥエックの研究によると、失敗を「自分には能力がない」証拠と考える人は挑戦を避けがちで、「まだ学んでいる途中」と考える人ほど挑戦し、成長するといわれます。私たちを止めているのは、能力よりも評価されることへの恐れであることが多いのです。"},
+ src:{zh:"成長型思維研究（Carol Dweck）",en:"Growth mindset research (Carol Dweck)",ja:"成長マインドセットの研究（キャロル・ドゥエック）"},
+ talk:{zh:"你做過最勇敢的一件事是什麼？當時是什麼讓你跨出那一步？",en:"What’s the bravest thing you’ve ever done? What helped you take that step?",ja:"今までにした、いちばん勇気のいることは？そのとき一歩を踏み出せたのはなぜ？"}},
+{theme:{zh:"後悔",en:"Regret",ja:"後悔"},
+ q:{zh:"十年後回頭看，你覺得自己最可能後悔什麼？",en:"Looking back ten years from now, what do you think you’ll most likely regret?",ja:"10年後に振り返ったとき、いちばん後悔しそうなことは？"},
+ opts:[
+  {zh:"沒有勇敢去做想做的事",en:"Not being brave enough to do what I wanted",ja:"やりたいことに挑戦しなかったこと"},
+  {zh:"太在意別人的眼光，活得不像自己",en:"Caring too much what others thought, not living as myself",ja:"人の目を気にしすぎて、自分らしく生きなかったこと"},
+  {zh:"沒有好好陪伴重要的人",en:"Not spending enough time with people who matter",ja:"大切な人と十分に過ごさなかったこと"},
+  {zh:"沒有好好照顧自己的身體和心",en:"Not taking care of my body and mind",ja:"自分の体と心を大切にしなかったこと"}],
+ view:{zh:"心理學家 Thomas Gilovich 的研究發現，短期內人們比較後悔「做錯的事」，但長期來看，最常後悔的是「沒做的事」，特別是沒有活成理想中的自己。好消息是，這種後悔通常還來得及改變。",en:"Thomas Gilovich’s research finds that in the short term people regret what they did, but over the long run they mostly regret what they didn’t do, especially not becoming the person they hoped to be. The good news: that kind of regret can usually still be changed.",ja:"トーマス・ギロヴィッチの研究によると、短期的には「したこと」を後悔しがちですが、長い目で見ると「しなかったこと」、特に理想の自分になれなかったことを最も後悔するといわれます。うれしいことに、こうした後悔はまだ変えられることが多いのです。"},
+ src:{zh:"後悔研究（Gilovich & Medvec；Davidai & Gilovich）",en:"Regret research (Gilovich & Medvec; Davidai & Gilovich)",ja:"後悔の研究（ギロヴィッチ＆メドヴェック／ダヴィダイ＆ギロヴィッチ）"},
+ talk:{zh:"為了不留下這個後悔，這個月你可以做的一件小事是什麼？",en:"What’s one small thing you could do this month so you won’t carry that regret?",ja:"その後悔を残さないために、今月できる小さなことは何？"}},
 {theme:{zh:"原諒",en:"Forgiveness",ja:"許すこと"},
  q:{zh:"原諒一個傷害過你的人，是為了誰？",en:"When you forgive someone who hurt you, who is it for?",ja:"自分を傷つけた人を許すのは、誰のため？"},
  opts:[
@@ -224,16 +234,6 @@ const QS=[
  view:{zh:"原諒研究（例如 Everett Worthington）指出，原諒是放下怨恨，不等於和好，也不等於說那件事沒關係。你可以原諒一個人，同時保持距離、設下界線。",en:"Forgiveness research (such as Everett Worthington’s) describes forgiveness as releasing resentment. It isn’t the same as reconciling, and it doesn’t mean what happened was okay. You can forgive someone and still keep your distance and your boundaries.",ja:"許しの研究（エヴェレット・ワーシントンなど）では、許しとは恨みを手放すことであり、仲直りすることとも、起きたことを「いいよ」と認めることとも違うとされています。許しながら、距離や境界線を保つこともできます。"},
  src:{zh:"原諒研究（Worthington）",en:"Forgiveness research (Worthington)",ja:"許しの研究（ワーシントン）"},
  talk:{zh:"有沒有一件事，你原諒了別人，卻還沒原諒自己？",en:"Is there something you’ve forgiven someone else for, but not yet forgiven yourself?",ja:"誰かのことは許せたのに、自分のことはまだ許せていない出来事はある？"}},
-{theme:{zh:"留下或離開",en:"Stay or go",ja:"とどまるか、離れるか"},
- q:{zh:"還愛著，但不快樂的關係，該留下嗎？",en:"Should you stay in a relationship where you still love them, but you’re not happy?",ja:"まだ好きだけど幸せではない関係に、とどまるべき？"},
- opts:[
-  {zh:"愛還在，就值得努力",en:"If the love is still there, it’s worth working on",ja:"愛があるなら、努力する価値がある"},
-  {zh:"不快樂就該離開，愛不是全部",en:"If I’m unhappy, I should leave; love isn’t everything",ja:"幸せでないなら離れるべき。愛がすべてではない"},
-  {zh:"要先弄清楚不快樂的原因",en:"First I need to understand why I’m unhappy",ja:"まずは幸せでない理由を見きわめたい"},
-  {zh:"看對方願不願意一起改變",en:"It depends on whether they’ll change with me",ja:"相手が一緒に変わろうとしてくれるか次第"}],
- view:{zh:"高特曼的研究發現，伴侶間約有三分之二的衝突是長期存在的個性差異。重點不是消除它們，而是能不能帶著善意一起面對。輕蔑和長期的冷漠，比吵架本身更值得警覺。",en:"Gottman’s research finds about two-thirds of couple conflicts are lasting differences in personality. The question isn’t whether they disappear, but whether you can face them with goodwill. Contempt and long-term coldness are bigger warning signs than arguing itself.",ja:"ゴットマンの研究によると、カップルの対立の約3分の2は、ずっと続く性格の違いによるものです。大切なのはそれを消すことではなく、思いやりを持って一緒に向き合えるかどうか。言い争いそのものより、軽蔑や長く続く冷たさのほうが注意すべきサインです。"},
- src:{zh:"高特曼伴侶研究（Gottman Institute）",en:"Couples research (Gottman Institute)",ja:"ゴットマンの夫婦研究"},
- talk:{zh:"對你來說，「該離開」的界線在哪裡？",en:"Where is your line for “it’s time to leave”?",ja:"あなたにとって「離れるべき」と思う境界線はどこ？"}},
 {theme:{zh:"好女孩的期待",en:"The “good girl” script",ja:"「いい子」という期待"},
  q:{zh:"「要乖、要體貼、不要讓人失望」——這些期待，讓你得到了什麼，又失去了什麼？",en:"“Be nice, be considerate, don’t disappoint anyone.” What have these expectations given you, and what have they cost you?",ja:"「いい子でいて、気を配って、人をがっかりさせないで」——この期待は、あなたに何を与え、何を奪った？"},
  opts:[
@@ -245,7 +245,7 @@ const QS=[
  src:{zh:"性別社會化與討好行為研究",en:"Research on gender socialization and people-pleasing",ja:"ジェンダーの社会化と迎合行動の研究"},
  talk:{zh:"如果小時候的你，可以不用當「好女孩」，你想對她說什麼？",en:"If the younger you didn’t have to be a “good girl,” what would you tell her?",ja:"「いい子」でいなくてよかったとしたら、子どものころの自分に何と言ってあげたい？"}}
 ];
-const KEY="blooming-questions-v1",LKEY="blooming-questions-lang";
+const KEY="blooming-questions-v2",LKEY="blooming-questions-lang";
 const blank=()=>({i:0,ans:Array(QS.length).fill(null),notes:Array(QS.length).fill("")});
 let state=blank();
 try{const s=JSON.parse(localStorage.getItem(KEY)||"null");if(s&&Array.isArray(s.ans)&&s.ans.length===QS.length)state=s}catch(e){}

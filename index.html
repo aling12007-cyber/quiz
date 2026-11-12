@@ -143,21 +143,22 @@ footer .garden{display:block;margin:0 auto;width:min(320px,100%)}
     <p class="note" id="t-privacy"></p>
   </footer>
 </main>
+<script src="share.js"></script>
 <script>
 const UI={
- zh:{nextpage:"下一站：未來的我與我的優勢 →",eyebrow:"關於自我與人生的八個提問",title:"花開的提問",lead:"這些問題沒有標準答案。先選最接近你的想法，再看看不同觀點，最後把它帶去和朋友聊聊。",
+ zh:{save:"存成圖片",shareBtn:"分享",hold:"長按圖片即可存到相簿，或點「下載圖片」。",download:"下載圖片",close:"關閉",shared:"已複製內容與連結",nextpage:"下一站：未來的我與我的優勢 →",eyebrow:"關於自我與人生的八個提問",title:"花開的提問",lead:"這些問題沒有標準答案。先選最接近你的想法，再看看不同觀點，最後把它帶去和朋友聊聊。",
   qnum:(i,n)=>`第 ${i} 題 / 共 ${n} 題`,src:"參考：",prev:"上一題",next:"下一題",done:"看我的答案",talk:"帶去聊聊",
   more:"你的想法（可不填）",ph:"為什麼選這個？有沒有一段經驗讓你這樣想？",yours:"我的答案",none:"（未作答）",
   closing:"好的問題不一定有答案，但會讓我們更了解自己，也更了解身邊的人。",
   copy:"複製我的答案",copied:"已複製，可以貼給朋友了",copyFail:"無法複製，請手動選取",again:"重新開始",
   privacy:"你的答案只存在這台裝置的瀏覽器裡，不會上傳到任何地方。本內容僅供思考與討論，不能取代專業心理諮商。"},
- en:{nextpage:"Next: Future Self & Strengths →",eyebrow:"Eight questions about yourself and your life",title:"Blooming Questions",lead:"There are no right answers here. Pick what feels closest to you, read another point of view, then take the question to a friend.",
+ en:{save:"Save as image",shareBtn:"Share",hold:"Long-press the image to save it, or tap Download.",download:"Download image",close:"Close",shared:"Copied text and link",nextpage:"Next: Future Self & Strengths →",eyebrow:"Eight questions about yourself and your life",title:"Blooming Questions",lead:"There are no right answers here. Pick what feels closest to you, read another point of view, then take the question to a friend.",
   qnum:(i,n)=>`Question ${i} of ${n}`,src:"Background: ",prev:"Back",next:"Next",done:"See my answers",talk:"Talk it over",
   more:"Your thoughts (optional)",ph:"Why this one? Is there an experience behind it?",yours:"My answers",none:"(not answered)",
   closing:"A good question doesn’t always have an answer, but it helps us understand ourselves and the people around us.",
   copy:"Copy my answers",copied:"Copied — ready to share",copyFail:"Couldn’t copy — please select the text",again:"Start over",
   privacy:"Your answers stay in this browser on this device and are never uploaded. For reflection and conversation only; not a substitute for professional counseling."},
- ja:{nextpage:"次へ：未来の私と私の強み →",eyebrow:"自分と人生をめぐる8つの問い",title:"花ひらく問い",lead:"正解のない問いです。いちばん近いものを選び、別の見方にもふれてから、友だちと話してみてください。",
+ ja:{save:"画像で保存",shareBtn:"シェア",hold:"画像を長押しして保存するか、「画像をダウンロード」を押してください。",download:"画像をダウンロード",close:"閉じる",shared:"内容とリンクをコピーしました",nextpage:"次へ：未来の私と私の強み →",eyebrow:"自分と人生をめぐる8つの問い",title:"花ひらく問い",lead:"正解のない問いです。いちばん近いものを選び、別の見方にもふれてから、友だちと話してみてください。",
   qnum:(i,n)=>`${n}問中 ${i}問目`,src:"背景：",prev:"前へ",next:"次へ",done:"私の答えを見る",talk:"話してみよう",
   more:"あなたの考え（任意）",ph:"なぜこれを選んだ？そう思うようになった経験はある？",yours:"私の答え",none:"（未回答）",
   closing:"いい問いには、必ずしも答えがありません。でも、自分のことも、まわりの人のことも、もっと深く知るきっかけになります。",
@@ -303,13 +304,18 @@ function renderSummary(){
       ${state.notes[k]?`<div class="n">${esc(state.notes[k])}</div>`:''}</div>`).join("")}
     <p class="closing">${u.closing}</p>
     <div class="nav">
+      <button type="button" class="btn primary" id="saveImg">${u.save}</button>
+      <button type="button" class="btn" id="shareBtn">${u.shareBtn}</button>
       <button type="button" class="btn" id="copy">${u.copy}</button>
-      <button type="button" class="btn primary" id="again">${u.again}</button>
+      <button type="button" class="btn" id="again">${u.again}</button>
     </div>`;
   $("copy").onclick=async()=>{
     const txt=u.title+"\n\n"+QS.map((Q,k)=>`${k+1}. ${T(Q.q)}\n→ ${state.ans[k]!==null?T(Q.opts[state.ans[k]]):u.none}${state.notes[k]?'\n  '+state.notes[k]:''}`).join("\n\n")+"\n\n"+location.href;
     try{await navigator.clipboard.writeText(txt);$("copy").textContent=u.copied}catch(e){$("copy").textContent=u.copyFail}
   };
+  const blocks=QS.map((Q,k)=>({h:`${k+1}. ${T(Q.q)}`,p:"→ "+(state.ans[k]!==null?T(Q.opts[state.ans[k]]):u.none)+(state.notes[k]?"\n"+state.notes[k]:"")}));
+  $("saveImg").onclick=()=>Bloom.saveImage({eyebrow:u.eyebrow,title:u.title,blocks,sig:""},u,"blooming-questions.png");
+  $("shareBtn").onclick=e=>Bloom.share({title:u.title,text:u.title+"\n\n"+blocks.map(b=>b.h+"\n"+b.p).join("\n\n")},u,e.currentTarget);
   $("again").onclick=()=>{state=blank();save();render();window.scrollTo({top:0})};
 }
 setLang(lang);

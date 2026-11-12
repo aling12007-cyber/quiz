@@ -101,6 +101,8 @@ summary{font-family:var(--round);font-weight:700;color:var(--accent);cursor:poin
 .official{background:var(--talk);border:2px dashed var(--center);border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:8px;align-items:flex-start}
 .official p{margin:0}
 .official .otitle{font-family:var(--round);font-weight:700;font-size:17px}
+.official .ourl{font-size:14.5px;word-break:break-all}
+.official .ourl a{color:var(--accent);font-weight:700}
 .official .btn{text-decoration:none}
 .notice{font-size:13px;color:var(--muted);background:var(--bg);border-radius:12px;padding:10px 12px;margin:0}
 .note{font-size:12.5px;color:var(--muted);margin:0;text-align:center}
@@ -173,6 +175,7 @@ footer .garden{display:block;margin:0 auto 8px;width:min(320px,100%)}
     <div class="official">
       <p class="otitle" id="t-otitle"></p>
       <p id="t-otext"></p>
+      <p class="ourl"><span id="t-ourl"></span> <a href="https://www.viacharacter.org" target="_blank" rel="noopener">https://www.viacharacter.org</a></p>
       <a class="btn primary" id="t-olink" href="https://www.viacharacter.org" target="_blank" rel="noopener"></a>
       <p class="hint" id="t-ohint"></p>
     </div>
@@ -203,9 +206,10 @@ footer .garden{display:block;margin:0 auto 8px;width:min(320px,100%)}
     <p class="note" id="t-privacy"></p>
   </footer>
 </main>
+<script src="share.js"></script>
 <script>
 const UI={
-zh:{otitle:"想要完整、正式的結果？",otext:"VIA Institute 官方的性格優勢測驗約 96 題、10–15 分鐘，有繁體中文版，完成後可免費取得 24 項優勢的完整排序。",olink:"前往官方 VIA 免費測驗 ↗",ohint:"需要以電子郵件註冊帳號。",quick:"沒時間做完整版？先試試下面的簡易版（24 題，約 3 分鐘）。",back:"← 回到「花開的提問」",eyebrow:"兩個有研究基礎的自我探索練習",title:"未來的我與我的優勢",
+zh:{save:"存成圖片",shareBtn:"分享",hold:"長按圖片即可存到相簿，或點「下載圖片」。",download:"下載圖片",close:"關閉",shared:"已複製內容與連結",otitle:"想要完整、正式的結果？",ourl:"官方網站：",otext:"VIA Institute 官方的性格優勢測驗約 96 題、10–15 分鐘，有繁體中文版，完成後可免費取得 24 項優勢的完整排序。",olink:"前往官方 VIA 免費測驗 ↗",ohint:"需要以電子郵件註冊帳號。",quick:"沒時間做完整版？先試試下面的簡易版（24 題，約 3 分鐘）。",back:"← 回到「花開的提問」",eyebrow:"兩個有研究基礎的自我探索練習",title:"未來的我與我的優勢",
  lead:"第一部分想像你想過的生活，第二部分找出你本來就擁有的力量。大約需要 10–15 分鐘。",jump1:"① 最好的未來自己",jump2:"② 我的性格優勢",
  p1:"第一部分",p1title:"最好的未來自己",p1intro:"這是正向心理學中被研究最多的練習之一。不用寫得完美，每題一兩句話就好。",
  imagine:"請想像：幾年後，你一直很努力，事情也都朝你希望的方向發展，你實現了大部分重要的目標。接下來，請用這個「最好的未來自己」來回答。",
@@ -218,7 +222,7 @@ zh:{otitle:"想要完整、正式的結果？",otext:"VIA Institute 官方的性
  s1:"1 一點也不像我",s5:"5 非常像我",count:(n,t)=>`已完成 ${n} / ${t} 題`,show:"看看我的優勢",need:"請先回答全部題目。",
  top:"你的前五項優勢",tryLabel:"這週試試看：",all:"完整排序",r2sum:"研究說明與參考資料",
  privacy:"你的回答只存在這台裝置的瀏覽器裡，不會上傳到任何地方。本頁內容僅供自我探索，不能取代專業心理諮商。"},
-en:{otitle:"Want full, official results?",otext:"The official VIA Survey from the VIA Institute has about 96 items and takes 10–15 minutes. It’s free, available in many languages, and gives your complete ranking of all 24 strengths.",olink:"Take the official free VIA Survey ↗",ohint:"You’ll need to sign up with an email address.",quick:"Short on time? Try the quick version below (24 statements, about 3 minutes).",back:"← Back to Blooming Questions",eyebrow:"Two research-based exercises for knowing yourself",title:"Future Self & Strengths",
+en:{save:"Save as image",shareBtn:"Share",hold:"Long-press the image to save it, or tap Download.",download:"Download image",close:"Close",shared:"Copied text and link",otitle:"Want full, official results?",ourl:"Official website:",otext:"The official VIA Survey from the VIA Institute has about 96 items and takes 10–15 minutes. It’s free, available in many languages, and gives your complete ranking of all 24 strengths.",olink:"Take the official free VIA Survey ↗",ohint:"You’ll need to sign up with an email address.",quick:"Short on time? Try the quick version below (24 statements, about 3 minutes).",back:"← Back to Blooming Questions",eyebrow:"Two research-based exercises for knowing yourself",title:"Future Self & Strengths",
  lead:"Part 1 imagines the life you want. Part 2 finds the strengths you already have. About 10–15 minutes.",jump1:"① Best Possible Self",jump2:"② My Character Strengths",
  p1:"Part 1",p1title:"Your Best Possible Self",p1intro:"One of the most studied exercises in positive psychology. It doesn’t need to be perfect — a sentence or two per question is enough.",
  imagine:"Imagine: a few years from now, you’ve worked hard and things have gone the way you hoped. You’ve reached most of the goals that matter to you. Answer as that best possible future self.",
@@ -231,7 +235,7 @@ en:{otitle:"Want full, official results?",otext:"The official VIA Survey from th
  s1:"1 Not like me at all",s5:"5 Very much like me",count:(n,t)=>`${n} of ${t} answered`,show:"Show my strengths",need:"Please answer every statement first.",
  top:"Your top five strengths",tryLabel:"Try this week: ",all:"Full ranking",r2sum:"Research and references",
  privacy:"Your answers stay in this browser on this device and are never uploaded. For self-exploration only; not a substitute for professional counseling."},
-ja:{otitle:"正式な結果を知りたい方へ",otext:"VIA Institute公式の強み診断は約96問・10〜15分で、日本語にも対応しています。無料で24の強みすべての順位がわかります。",olink:"公式のVIAサーベイ（無料）へ ↗",ohint:"メールアドレスでの登録が必要です。",quick:"時間がない方は、まず下の簡易版をどうぞ（24問・約3分）。",back:"← 「花ひらく問い」に戻る",eyebrow:"研究にもとづく、自分を知るための2つのワーク",title:"未来の私と私の強み",
+ja:{save:"画像で保存",shareBtn:"シェア",hold:"画像を長押しして保存するか、「画像をダウンロード」を押してください。",download:"画像をダウンロード",close:"閉じる",shared:"内容とリンクをコピーしました",otitle:"正式な結果を知りたい方へ",ourl:"公式サイト：",otext:"VIA Institute公式の強み診断は約96問・10〜15分で、日本語にも対応しています。無料で24の強みすべての順位がわかります。",olink:"公式のVIAサーベイ（無料）へ ↗",ohint:"メールアドレスでの登録が必要です。",quick:"時間がない方は、まず下の簡易版をどうぞ（24問・約3分）。",back:"← 「花ひらく問い」に戻る",eyebrow:"研究にもとづく、自分を知るための2つのワーク",title:"未来の私と私の強み",
  lead:"第1部では送りたい人生を思い描き、第2部では今すでに持っている強みを見つけます。所要時間は約10〜15分です。",jump1:"① ベスト・ポッシブル・セルフ",jump2:"② 私の強み",
  p1:"第1部",p1title:"最高の未来の自分",p1intro:"ポジティブ心理学で最もよく研究されているワークのひとつです。完璧でなくて大丈夫。各問1〜2文で十分です。",
  imagine:"想像してみてください。数年後、あなたは努力を重ね、物事は望んだとおりに進み、大切な目標のほとんどを叶えています。その「最高の未来の自分」として答えてください。",
@@ -321,7 +325,7 @@ function setLang(l){lang=l;try{localStorage.setItem(LKEY,l)}catch(e){}
   document.documentElement.lang={zh:"zh-Hant",en:"en",ja:"ja"}[l];
   document.querySelectorAll(".lang button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.l===l));
   const u=UI[l];
-  for(const k of ["back","eyebrow","title","lead","jump1","jump2","p1","p1title","p1intro","imagine","r1sum","p2","p2title","p2intro","otitle","otext","olink","ohint","quick","notice","s1","s5","r2sum","privacy"]){const el=$("t-"+k);if(el)el.textContent=u[k]}
+  for(const k of ["back","eyebrow","title","lead","jump1","jump2","p1","p1title","p1intro","imagine","r1sum","p2","p2title","p2intro","otitle","otext","ourl","olink","ohint","quick","notice","s1","s5","r2sum","privacy"]){const el=$("t-"+k);if(el)el.textContent=u[k]}
   $("makeLetter").textContent=u.makeLetter;$("showStrengths").textContent=u.show;
   document.title=u.title;
   renderBPS();renderLetter();renderSQ();renderStrengths();renderRes();
@@ -382,7 +386,9 @@ function renderLetter(){
     ${L.step?`<p><b>${esc(L.step)}</b></p>`:""}
     <p class="sig">${u.sig}</p></div>
     <p class="hint" style="text-align:center">${u.again}</p>
-    <div class="row"><button type="button" class="btn" id="copyLetter">${u.copy}</button></div>`;
+    <div class="row"><button type="button" class="btn primary" id="saveLetter">${u.save}</button><button type="button" class="btn" id="shareLetter">${u.shareBtn}</button><button type="button" class="btn" id="copyLetter">${u.copy}</button></div>`;
+  $("saveLetter").onclick=()=>Bloom.saveImage({eyebrow:u.title,title:u.letterTitle,blocks:[{p:L.head,strong:true},...L.body.map(p=>({p})),...(L.step?[{p:L.step,strong:true}]:[])],sig:u.sig},u,"future-me.png");
+  $("shareLetter").onclick=e=>Bloom.share({title:u.letterTitle,text:[u.letterTitle,L.head,...L.body,L.step,u.sig].filter(Boolean).join("\n")},u,e.currentTarget);
   $("copyLetter").onclick=async()=>{
     const txt=[u.letterTitle,"",L.head,...L.body,L.step,"",u.sig].filter((x,i)=>x!==undefined).join("\n");
     try{await navigator.clipboard.writeText(txt);$("copyLetter").textContent=u.copied}catch(e){$("copyLetter").textContent=u.copyFail}
@@ -408,8 +414,19 @@ function renderStrengths(){
       <div class="name"><span class="rank">${r+1}</span>${T(s[1])}</div>
       <div class="virtue">${T(VIRTUE[s[0]])}</div>
       <div class="tip"><b>${u.tryLabel}</b>${T(s[3])}</div></div>`}).join("")}</div>
+    <div class="row"><button type="button" class="btn primary" id="saveS">${u.save}</button><button type="button" class="btn" id="shareS">${u.shareBtn}</button><button type="button" class="btn" id="copyS">${u.copy}</button></div>
     <details><summary>${u.all}</summary><div class="bars" style="margin-top:10px">${order.map(o=>`<div class="bar"><span>${T(S[o.i][1])}</span><span class="track"><span class="fill" style="display:block;width:${o.v*20}%"></span></span><span class="v">${o.v}</span></div>`).join("")}</div></details>`;
 }
+function strengthsCard(){const u=UI[lang];const order=S.map((s,i)=>({i,v:st.sc[i]})).sort((a,b)=>b.v-a.v||a.i-b.i).slice(0,5);
+  return {u,order,blocks:order.map((o,r)=>({h:`${r+1}. ${T(S[o.i][1])}（${T(VIRTUE[S[o.i][0]])}）`.replace(/（(.*)）/,lang==="en"?" · $1":"（$1）"),p:u.tryLabel+T(S[o.i][3])}))}}
+document.addEventListener("click",async e=>{
+  const id=e.target.id;if(!["saveS","shareS","copyS"].includes(id))return;
+  const {u,blocks}=strengthsCard();
+  const text=[u.top,...blocks.map(b=>b.h+"\n"+b.p)].join("\n\n");
+  if(id==="saveS")Bloom.saveImage({eyebrow:u.title,title:u.top,blocks},u,"my-strengths.png");
+  if(id==="shareS")Bloom.share({title:u.top,text},u,e.target);
+  if(id==="copyS"){try{await navigator.clipboard.writeText(text+"\n\n"+location.href.split("#")[0]);e.target.textContent=u.copied}catch(err){e.target.textContent=u.copyFail}}
+});
 $("showStrengths").onclick=()=>{st.showS=true;save();renderStrengths();$("strengthBox").scrollIntoView({behavior:"smooth",block:"start"})};
 function renderRes(){
   for(const k of ["r1","r2"]){

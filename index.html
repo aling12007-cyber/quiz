@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>花開的提問 · Blooming Questions</title>
+<meta name="description" content="八個關於愛、自我與人生的深度提問，可以自己想，也可以和朋友一起聊。8 deep questions about love, self and life. 愛と自分と人生をめぐる8つの問い。">
+<meta property="og:title" content="花開的提問 · Blooming Questions · 花ひらく問い">
+<meta property="og:description" content="Deep questions to think about and talk over · 中文 / English / 日本語">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+/* Layout: one soft card at a time, framed by little blossoms, like a pressed-flower journal */
+:root{
+  --bg:#fff4f6; --surface:#ffffff; --fg:#4a2c36; --muted:#8a6470; --line:#f6d3dc;
+  --accent:#e2668b; --accent-soft:#ffe4ec; --on-accent:#ffffff; --talk:#fff8e6;
+  --petal-a:#f7a8bf; --petal-b:#ffc9d6; --petal-c:#f4b6e0; --leaf:#9ccfa4; --center:#ffd36e; --face:#4a2c36;
+  --round:"Zen Maru Gothic","Noto Sans TC","Hiragino Maru Gothic ProN","PingFang TC",sans-serif;
+  --body:"Noto Sans TC","Zen Maru Gothic","PingFang TC","Hiragino Sans","Microsoft JhengHei",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#2a1a22; --surface:#36222c; --fg:#fbe7ee; --muted:#d6a9b8; --line:#55343f;
+  --accent:#ff8fb1; --accent-soft:#4a2a36; --on-accent:#2a1a22; --talk:#3d2c25;
+  --petal-a:#e0789a; --petal-b:#c96a8b; --petal-c:#b974a8; --leaf:#6fa37a; --center:#e7b955; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#2a1a22; --surface:#36222c; --fg:#fbe7ee; --muted:#d6a9b8; --line:#55343f;
+  --accent:#ff8fb1; --accent-soft:#4a2a36; --on-accent:#2a1a22; --talk:#3d2c25;
+  --petal-a:#e0789a; --petal-b:#c96a8b; --petal-c:#b974a8; --leaf:#6fa37a; --center:#e7b955; color-scheme:dark}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.75;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  padding-block:max(24px,env(safe-area-inset-top,0px)) max(48px,env(safe-area-inset-bottom,0px));
+  background-image:radial-gradient(var(--line) 1.2px,transparent 1.4px);background-size:22px 22px;overflow-x:hidden}
+html[lang="ja"] body{font-family:var(--round)}
+main{max-width:600px;margin:0 auto;display:flex;flex-direction:column;gap:22px;position:relative}
+.lang{display:flex;justify-content:flex-end;gap:6px;flex-wrap:wrap}
+.lang button{font:inherit;font-size:13px;font-family:var(--round);font-weight:700;border:1.5px solid var(--line);background:var(--surface);color:var(--muted);border-radius:999px;padding:4px 12px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+header{position:relative;text-align:center;display:flex;flex-direction:column;align-items:center;gap:6px;padding-top:4px}
+.mascot{width:112px;height:112px}
+.eyebrow{font-family:var(--round);font-size:13px;letter-spacing:.06em;color:var(--accent);font-weight:700}
+h1{font-family:var(--round);font-size:clamp(26px,6.5vw,34px);line-height:1.3;margin:0;text-wrap:balance}
+.lead{color:var(--muted);margin:0;max-width:30em;text-wrap:balance}
+.deco{position:absolute;pointer-events:none}
+.deco.l{left:-8px;top:52px;width:54px}
+.deco.r{right:-6px;top:10px;width:44px}
+.progress{display:flex;gap:6px;justify-content:center}
+.progress svg{width:22px;height:22px}
+.card{position:relative;background:var(--surface);border:2px solid var(--line);border-radius:26px;padding:26px 22px;display:flex;flex-direction:column;gap:16px;box-shadow:0 8px 0 var(--line)}
+.card .corner{position:absolute;right:14px;top:-18px;width:46px}
+.qnum{font-family:var(--round);font-size:13px;color:var(--accent);font-weight:700;letter-spacing:.05em}
+.theme{display:inline-block;font-size:12.5px;font-family:var(--round);font-weight:700;color:var(--accent);background:var(--accent-soft);border-radius:999px;padding:2px 10px;align-self:flex-start}
+h2{font-family:var(--round);font-size:21px;line-height:1.5;margin:0;text-wrap:balance}
+.options{display:flex;flex-direction:column;gap:10px}
+.opt{font:inherit;text-align:left;color:var(--fg);background:var(--bg);border:2px solid var(--line);border-radius:16px;padding:12px 16px;cursor:pointer;transition:transform .15s,background .15s,border-color .15s;display:flex;align-items:center;gap:10px}
+.opt::before{content:"";flex:none;width:14px;height:14px;border-radius:50%;border:2px solid var(--petal-a)}
+.opt:hover{border-color:var(--petal-a);transform:translateY(-1px)}
+.opt[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);font-weight:500}
+.opt[aria-pressed="true"]::before{background:var(--accent);border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.opt:focus-visible,.btn:focus-visible,textarea:focus-visible,.lang button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.insight{background:var(--accent-soft);border-radius:18px;padding:14px 16px;display:flex;flex-direction:column;gap:8px;animation:pop .35s ease-out}
+.insight p{margin:0}
+.insight .src{font-size:12.5px;color:var(--muted)}
+.talk{background:var(--talk);border:2px dashed var(--center);border-radius:18px;padding:12px 16px;font-size:15px}
+.talk b{font-family:var(--round);color:var(--accent);display:block;margin-bottom:2px}
+@keyframes pop{from{transform:scale(.97)}to{transform:none}}
+label{font-size:14px;color:var(--muted)}
+textarea{font:inherit;color:var(--fg);background:var(--bg);border:2px solid var(--line);border-radius:14px;padding:10px 12px;width:100%;min-height:80px;resize:vertical}
+.nav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.btn{font:inherit;font-family:var(--round);font-weight:700;border-radius:999px;padding:10px 24px;cursor:pointer;border:2px solid var(--line);background:var(--surface);color:var(--fg)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent);box-shadow:0 4px 0 var(--petal-a)}
+.btn.primary:active{transform:translateY(2px);box-shadow:0 2px 0 var(--petal-a)}
+.btn:disabled{opacity:.4;cursor:default;box-shadow:none}
+.summary-item{border-top:2px dashed var(--line);padding-top:14px;display:flex;flex-direction:column;gap:4px}
+.summary-item:first-of-type{border-top:0;padding-top:0}
+.summary-item .q{font-size:14px;color:var(--muted)}
+.summary-item .a{font-weight:500}
+.summary-item .n{font-size:14.5px;white-space:pre-wrap}
+.closing{font-family:var(--round);font-size:19px;line-height:1.65;margin:0;text-align:center;text-wrap:balance}
+.note{font-size:12.5px;color:var(--muted);margin:0;text-align:center}
+footer{display:flex;flex-direction:column;gap:8px}
+footer .garden{display:block;margin:0 auto;width:min(320px,100%)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="flower" viewBox="-50 -50 100 100">
+      <g fill="currentColor">
+        <ellipse rx="17" ry="25" cy="-24"/><ellipse rx="17" ry="25" cy="-24" transform="rotate(72)"/>
+        <ellipse rx="17" ry="25" cy="-24" transform="rotate(144)"/><ellipse rx="17" ry="25" cy="-24" transform="rotate(216)"/>
+        <ellipse rx="17" ry="25" cy="-24" transform="rotate(288)"/>
+      </g>
+      <circle r="13" fill="var(--center)"/>
+    </symbol>
+    <symbol id="leaf" viewBox="0 0 40 20"><path d="M2 10 C12 -2 30 -2 38 10 C30 22 12 22 2 10Z" fill="var(--leaf)"/></symbol>
+  </defs>
+</svg>
+<main>
+  <nav class="lang" aria-label="Language">
+    <button type="button" id="lang-zh" data-l="zh">中文</button>
+    <button type="button" id="lang-en" data-l="en">English</button>
+    <button type="button" id="lang-ja" data-l="ja">日本語</button>
+  </nav>
+  <header>
+    <svg class="deco l" viewBox="0 0 60 90" aria-hidden="true">
+      <path d="M30 88 C28 60 34 40 30 20" stroke="var(--leaf)" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <use href="#leaf" x="30" y="48" width="24" height="12"/><use href="#leaf" x="6" y="62" width="24" height="12"/>
+      <use href="#flower" x="10" y="0" width="40" height="40" style="color:var(--petal-c)"/>
+    </svg>
+    <svg class="deco r" viewBox="0 0 50 50" aria-hidden="true"><use href="#flower" width="50" height="50" style="color:var(--petal-b)"/></svg>
+    <svg class="mascot" viewBox="-60 -60 120 120" role="img" aria-label="flower">
+      <g fill="var(--petal-a)">
+        <ellipse rx="20" ry="30" cy="-30"/><ellipse rx="20" ry="30" cy="-30" transform="rotate(60)"/>
+        <ellipse rx="20" ry="30" cy="-30" transform="rotate(120)"/><ellipse rx="20" ry="30" cy="-30" transform="rotate(180)"/>
+        <ellipse rx="20" ry="30" cy="-30" transform="rotate(240)"/><ellipse rx="20" ry="30" cy="-30" transform="rotate(300)"/>
+      </g>
+      <circle r="26" fill="var(--center)"/>
+      <circle cx="-9" cy="-3" r="3.4" fill="var(--face)"/><circle cx="9" cy="-3" r="3.4" fill="var(--face)"/>
+      <circle cx="-15" cy="7" r="4.5" fill="#f78fa7" opacity=".7"/><circle cx="15" cy="7" r="4.5" fill="#f78fa7" opacity=".7"/>
+      <path d="M-6 8 Q0 14 6 8" stroke="var(--face)" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+    </svg>
+    <div class="eyebrow" id="t-eyebrow"></div>
+    <h1 id="t-title"></h1>
+    <p class="lead" id="t-lead"></p>
+  </header>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+  <section class="card" id="stage" aria-live="polite"></section>
+  <footer>
+    <svg class="garden" viewBox="0 0 320 60" aria-hidden="true">
+      <path d="M0 52 Q80 44 160 52 T320 52" stroke="var(--leaf)" stroke-width="3" fill="none"/>
+      <use href="#flower" x="18" y="18" width="30" height="30" style="color:var(--petal-a)"/>
+      <use href="#leaf" x="50" y="38" width="22" height="11"/>
+      <use href="#flower" x="92" y="26" width="22" height="22" style="color:var(--petal-c)"/>
+      <use href="#flower" x="148" y="12" width="36" height="36" style="color:var(--petal-b)"/>
+      <use href="#leaf" x="186" y="38" width="22" height="11"/>
+      <use href="#flower" x="222" y="24" width="24" height="24" style="color:var(--petal-a)"/>
+      <use href="#flower" x="276" y="16" width="30" height="30" style="color:var(--petal-c)"/>
+    </svg>
+    <p class="note" id="t-privacy"></p>
+  </footer>
+</main>
+<script>
+const UI={
+ zh:{eyebrow:"關於愛、自我與人生的八個提問",title:"花開的提問",lead:"這些問題沒有標準答案。先選最接近你的想法，再看看不同觀點，最後把它帶去和朋友、伴侶聊聊。",
+  qnum:(i,n)=>`第 ${i} 題 / 共 ${n} 題`,src:"參考：",prev:"上一題",next:"下一題",done:"看我的答案",talk:"帶去聊聊",
+  more:"你的想法（可不填）",ph:"為什麼選這個？有沒有一段經驗讓你這樣想？",yours:"我的答案",none:"（未作答）",
+  closing:"好的問題不一定有答案，但會讓我們更了解自己，也更了解身邊的人。",
+  copy:"複製我的答案",copied:"已複製，可以貼給朋友了",copyFail:"無法複製，請手動選取",again:"重新開始",
+  privacy:"你的答案只存在這台裝置的瀏覽器裡，不會上傳到任何地方。本內容僅供思考與討論，不能取代專業心理諮商。"},
+ en:{eyebrow:"Eight questions about love, self and life",title:"Blooming Questions",lead:"There are no right answers here. Pick what feels closest to you, read another point of view, then take the question to a friend or partner.",
+  qnum:(i,n)=>`Question ${i} of ${n}`,src:"Background: ",prev:"Back",next:"Next",done:"See my answers",talk:"Talk it over",
+  more:"Your thoughts (optional)",ph:"Why this one? Is there an experience behind it?",yours:"My answers",none:"(not answered)",
+  closing:"A good question doesn’t always have an answer, but it helps us understand ourselves and the people around us.",
+  copy:"Copy my answers",copied:"Copied — ready to share",copyFail:"Couldn’t copy — please select the text",again:"Start over",
+  privacy:"Your answers stay in this browser on this device and are never uploaded. For reflection and conversation only; not a substitute for professional counseling."},
+ ja:{eyebrow:"愛と自分と人生をめぐる8つの問い",title:"花ひらく問い",lead:"正解のない問いです。いちばん近いものを選び、別の見方にもふれてから、友だちやパートナーと話してみてください。",
+  qnum:(i,n)=>`${n}問中 ${i}問目`,src:"背景：",prev:"前へ",next:"次へ",done:"私の答えを見る",talk:"話してみよう",
+  more:"あなたの考え（任意）",ph:"なぜこれを選んだ？そう思うようになった経験はある？",yours:"私の答え",none:"（未回答）",
+  closing:"いい問いには、必ずしも答えがありません。でも、自分のことも、まわりの人のことも、もっと深く知るきっかけになります。",
+  copy:"答えをコピー",copied:"コピーしました。友だちにシェアできます",copyFail:"コピーできませんでした。手動で選択してください",again:"最初から",
+  privacy:"回答はこの端末のブラウザにだけ保存され、どこにも送信されません。考えるきっかけとしての内容であり、専門のカウンセリングの代わりにはなりません。"}
+};
+const QS=[
+{theme:{zh:"愛與改變",en:"Love and change",ja:"愛と変化"},
+ q:{zh:"真正愛一個人，應該為對方改變多少？",en:"If you truly love someone, how much should you change for them?",ja:"本当に誰かを愛しているなら、相手のためにどこまで変わるべき？"},
+ opts:[
+  {zh:"愛就是接受原本的樣子，不該要求改變",en:"Love means accepting each other as we are",ja:"愛とはありのままを受け入れること。変化を求めるべきではない"},
+  {zh:"習慣可以改，但核心的自己不能讓",en:"Habits can change, but not my core self",ja:"習慣は変えられても、自分の核は譲れない"},
+  {zh:"願意為對方成長，本身就是愛",en:"Being willing to grow for someone is love",ja:"相手のために成長しようとすること自体が愛"},
+  {zh:"不是為對方改，是因為對方讓我想變好",en:"I don’t change for them; they make me want to grow",ja:"相手のためではなく、相手のおかげで良くなりたいと思える"}],
+ view:{zh:"心理學家 Arthur Aron 的「自我擴展」研究發現，好的關係會讓我們學到新東西、看見更大的自己。但若改變是出於害怕被拋棄，而不是成長，往往會讓人慢慢失去自己。",en:"Arthur Aron’s “self-expansion” research suggests good relationships help us learn and grow into a bigger self. But change driven by fear of being left, rather than growth, can slowly erase who we are.",ja:"心理学者アーサー・アロンの「自己拡張」研究によると、よい関係は新しいことを学ばせ、自分を広げてくれます。でも、見捨てられる不安から変わろうとすると、少しずつ自分を見失ってしまうことがあります。"},
+ src:{zh:"自我擴展理論（Aron & Aron）",en:"Self-expansion theory (Aron & Aron)",ja:"自己拡張理論（アロン夫妻）"},
+ talk:{zh:"你曾經為了誰改變過什麼？那個改變現在讓你感覺如何？",en:"Have you ever changed something for someone? How do you feel about that change now?",ja:"誰かのために何かを変えたことはある？その変化を、今どう感じている？"}},
+{theme:{zh:"安全感",en:"Security",ja:"安心感"},
+ q:{zh:"在一段關係裡，安全感應該從哪裡來？",en:"In a relationship, where should security come from?",ja:"恋愛の中で、安心感はどこから来るべき？"},
+ opts:[
+  {zh:"應該完全靠自己給自己",en:"Entirely from myself",ja:"完全に自分で自分に与えるもの"},
+  {zh:"伴侶有責任讓我安心",en:"My partner is responsible for making me feel safe",ja:"パートナーには安心させる責任がある"},
+  {zh:"一半來自自己，一半來自對方",en:"Half from me, half from them",ja:"半分は自分、半分は相手から"},
+  {zh:"來自兩個人一起建立的信任",en:"From the trust we build together",ja:"二人で築いた信頼から"}],
+ view:{zh:"依附研究發現，人天生需要親近的人作為「安全基地」，所以完全不需要對方並不現實。但只靠對方給，關係又會變得很重。研究稱之為「依賴的悖論」：需要被好好回應的人，反而更能獨立。",en:"Attachment research shows we’re wired to need close people as a “secure base,” so needing no one is unrealistic. Yet relying only on a partner makes a relationship heavy. Researchers call it the “dependency paradox”: people whose needs are met become more independent, not less.",ja:"愛着研究によれば、人は身近な人を「安全基地」として必要とするようにできています。だから誰も必要としないのは現実的ではありません。一方で、相手だけに頼ると関係は重くなります。研究ではこれを「依存のパラドックス」と呼び、ニーズが満たされた人ほど自立できるとしています。"},
+ src:{zh:"依附理論（Bowlby；Levine & Heller《依附》）",en:"Attachment theory (Bowlby; Levine & Heller, Attached)",ja:"愛着理論（ボウルビィ／レヴィン＆ヘラー『Attached』）"},
+ talk:{zh:"你最有安全感的一段關係（不一定是愛情），對方做了什麼？",en:"Think of the relationship where you felt safest (not necessarily romantic). What did that person do?",ja:"いちばん安心できた関係（恋愛に限らず）で、相手は何をしてくれた？"}},
+{theme:{zh:"理解與讚美",en:"Understood or admired",ja:"理解と称賛"},
+ q:{zh:"如果只能選一個，你想被深深理解，還是被大家欣賞？",en:"If you could only have one: to be deeply understood, or widely admired?",ja:"どちらか一つなら、深く理解されたい？それとも多くの人に称賛されたい？"},
+ opts:[
+  {zh:"被一個人深深理解就夠了",en:"Being deeply understood by one person is enough",ja:"一人に深く理解されれば十分"},
+  {zh:"被很多人欣賞，讓我更有自信",en:"Being admired by many gives me confidence",ja:"多くの人に認められると自信になる"},
+  {zh:"我想先理解自己",en:"I want to understand myself first",ja:"まず自分を理解したい"},
+  {zh:"兩個都想要，很難選",en:"I want both — it’s hard to choose",ja:"両方ほしくて選べない"}],
+ view:{zh:"研究發現，覺得「被理解」和幸福感、關係滿意度的關係，比被稱讚更穩定。讚美讓人一時開心，但被看見真實的自己，才會讓人感到不孤單。",en:"Research on “perceived understanding” finds that feeling understood is more steadily linked to well-being and relationship satisfaction than praise. Praise feels good for a moment; being seen for who you really are makes you feel less alone.",ja:"「理解されている感覚」の研究では、称賛よりも理解されることのほうが、幸福感や関係の満足度と安定して結びついているとされています。ほめ言葉はひとときの喜び。本当の自分を見てもらえることが、孤独を和らげます。"},
+ src:{zh:"被理解感研究（Reis 等人）",en:"Perceived understanding research (Reis et al.)",ja:"被理解感の研究（リースら）"},
+ talk:{zh:"誰是最懂你的人？他懂你的哪一部分，是別人看不到的？",en:"Who understands you best? What part of you do they see that others don’t?",ja:"あなたをいちばんわかってくれる人は誰？ほかの人には見えない、どんな部分をわかってくれている？"}},
+{theme:{zh:"成功的定義",en:"What counts as success",ja:"成功の定義"},
+ q:{zh:"一個女生要怎麼樣，才算「活得好」？",en:"What does it mean for a woman to be “living well”?",ja:"女性にとって「よく生きている」とは、どういうこと？"},
+ opts:[
+  {zh:"事業有成、經濟獨立",en:"Career success and financial independence",ja:"仕事で成功し、経済的に自立している"},
+  {zh:"有愛她的人和溫暖的家",en:"Being loved and having a warm home",ja:"愛してくれる人と温かい家庭がある"},
+  {zh:"能自由選擇自己想要的生活",en:"Being free to choose the life she wants",ja:"自分が望む生き方を自由に選べる"},
+  {zh:"平凡、平靜、每天都過得安心",en:"An ordinary, peaceful, secure everyday life",ja:"平凡でおだやかに、毎日安心して過ごせる"}],
+ view:{zh:"自我決定理論指出，長期的幸福感來自三種需要：自主（自己選擇）、能力（覺得自己做得到）和連結（與人有親密關係）。外在成就本身不一定帶來幸福，關鍵是那是不是你自己想要的。",en:"Self-determination theory says lasting well-being comes from three needs: autonomy (choosing for yourself), competence (feeling capable) and relatedness (close connection). Outward achievement doesn’t guarantee happiness; what matters is whether it’s what you actually want.",ja:"自己決定理論によると、長く続く幸福感は三つの欲求から生まれます。自律性（自分で選ぶこと）、有能感（自分にはできると感じること）、関係性（人と親しくつながること）です。外から見える成功が幸せを保証するわけではなく、それが本当に自分の望みかどうかが大切です。"},
+ src:{zh:"自我決定理論（Deci & Ryan）",en:"Self-determination theory (Deci & Ryan)",ja:"自己決定理論（デシ＆ライアン）"},
+ talk:{zh:"你心中「活得好」的樣子，是你自己想要的，還是別人告訴你的？",en:"Is your picture of “living well” something you want, or something you were told to want?",ja:"あなたの思う「よく生きる」は、自分の望み？それとも誰かに言われてきたもの？"}},
+{theme:{zh:"伴侶的過去",en:"A partner’s past",ja:"相手の過去"},
+ q:{zh:"伴侶的過去，例如前任，你想知道多少？",en:"How much do you want to know about your partner’s past, like their exes?",ja:"パートナーの過去（元恋人など）を、どこまで知りたい？"},
+ opts:[
+  {zh:"越少越好，過去就讓它過去",en:"As little as possible; the past is past",ja:"知らないほうがいい。過去は過去"},
+  {zh:"想知道全部，才有安全感",en:"Everything — that’s how I feel safe",ja:"全部知りたい。そのほうが安心できる"},
+  {zh:"知道重要的事就好，細節不需要",en:"The important things, not the details",ja:"大事なことだけで、細かいことはいらない"},
+  {zh:"想知道，但知道了又會難過",en:"I want to know, but knowing makes me sad",ja:"知りたいけど、知ると悲しくなる"}],
+ view:{zh:"研究發現，對伴侶過去的「回溯性嫉妒」很常見，尤其在越在乎的時候越明顯。它多半和現在的不安有關，而不是過去本身。了解對方從過去學到什麼，通常比知道細節更有幫助。",en:"“Retroactive jealousy” about a partner’s past is common, and often strongest when we care most. It usually reflects present insecurity more than the past itself. Knowing what someone learned from their past tends to help more than knowing the details.",ja:"相手の過去への「遡及的嫉妬」はよくあることで、相手を大切に思うほど強くなりがちです。多くの場合、それは過去そのものより今の不安と関係しています。細かい出来事より、相手が過去から何を学んだかを知るほうが助けになります。"},
+ src:{zh:"嫉妒與關係研究",en:"Research on jealousy in relationships",ja:"恋愛における嫉妬の研究"},
+ talk:{zh:"知道伴侶的過去，對你來說是安心還是不安？為什麼？",en:"Does knowing a partner’s past make you feel calmer or more uneasy? Why?",ja:"相手の過去を知ることは、あなたにとって安心？それとも不安？それはなぜ？"}},
+{theme:{zh:"原諒",en:"Forgiveness",ja:"許すこと"},
+ q:{zh:"原諒一個傷害過你的人，是為了誰？",en:"When you forgive someone who hurt you, who is it for?",ja:"自分を傷つけた人を許すのは、誰のため？"},
+ opts:[
+  {zh:"為了自己，放下才能前進",en:"For me — letting go lets me move on",ja:"自分のため。手放してこそ前に進める"},
+  {zh:"為了關係，想繼續走下去",en:"For the relationship — I want to keep going",ja:"関係のため。これからも続けたいから"},
+  {zh:"有些傷害不需要被原諒",en:"Some hurts don’t need to be forgiven",ja:"許さなくていい傷もある"},
+  {zh:"原諒了，但不會忘記",en:"I forgive, but I don’t forget",ja:"許しても、忘れはしない"}],
+ view:{zh:"原諒研究（例如 Everett Worthington）指出，原諒是放下怨恨，不等於和好，也不等於說那件事沒關係。你可以原諒一個人，同時保持距離、設下界線。",en:"Forgiveness research (such as Everett Worthington’s) describes forgiveness as releasing resentment. It isn’t the same as reconciling, and it doesn’t mean what happened was okay. You can forgive someone and still keep your distance and your boundaries.",ja:"許しの研究（エヴェレット・ワーシントンなど）では、許しとは恨みを手放すことであり、仲直りすることとも、起きたことを「いいよ」と認めることとも違うとされています。許しながら、距離や境界線を保つこともできます。"},
+ src:{zh:"原諒研究（Worthington）",en:"Forgiveness research (Worthington)",ja:"許しの研究（ワーシントン）"},
+ talk:{zh:"有沒有一件事，你原諒了別人，卻還沒原諒自己？",en:"Is there something you’ve forgiven someone else for, but not yet forgiven yourself?",ja:"誰かのことは許せたのに、自分のことはまだ許せていない出来事はある？"}},
+{theme:{zh:"留下或離開",en:"Stay or go",ja:"とどまるか、離れるか"},
+ q:{zh:"還愛著，但不快樂的關係，該留下嗎？",en:"Should you stay in a relationship where you still love them, but you’re not happy?",ja:"まだ好きだけど幸せではない関係に、とどまるべき？"},
+ opts:[
+  {zh:"愛還在，就值得努力",en:"If the love is still there, it’s worth working on",ja:"愛があるなら、努力する価値がある"},
+  {zh:"不快樂就該離開，愛不是全部",en:"If I’m unhappy, I should leave; love isn’t everything",ja:"幸せでないなら離れるべき。愛がすべてではない"},
+  {zh:"要先弄清楚不快樂的原因",en:"First I need to understand why I’m unhappy",ja:"まずは幸せでない理由を見きわめたい"},
+  {zh:"看對方願不願意一起改變",en:"It depends on whether they’ll change with me",ja:"相手が一緒に変わろうとしてくれるか次第"}],
+ view:{zh:"高特曼的研究發現，伴侶間約有三分之二的衝突是長期存在的個性差異。重點不是消除它們，而是能不能帶著善意一起面對。輕蔑和長期的冷漠，比吵架本身更值得警覺。",en:"Gottman’s research finds about two-thirds of couple conflicts are lasting differences in personality. The question isn’t whether they disappear, but whether you can face them with goodwill. Contempt and long-term coldness are bigger warning signs than arguing itself.",ja:"ゴットマンの研究によると、カップルの対立の約3分の2は、ずっと続く性格の違いによるものです。大切なのはそれを消すことではなく、思いやりを持って一緒に向き合えるかどうか。言い争いそのものより、軽蔑や長く続く冷たさのほうが注意すべきサインです。"},
+ src:{zh:"高特曼伴侶研究（Gottman Institute）",en:"Couples research (Gottman Institute)",ja:"ゴットマンの夫婦研究"},
+ talk:{zh:"對你來說，「該離開」的界線在哪裡？",en:"Where is your line for “it’s time to leave”?",ja:"あなたにとって「離れるべき」と思う境界線はどこ？"}},
+{theme:{zh:"好女孩的期待",en:"The “good girl” script",ja:"「いい子」という期待"},
+ q:{zh:"「要乖、要體貼、不要讓人失望」——這些期待，讓你得到了什麼，又失去了什麼？",en:"“Be nice, be considerate, don’t disappoint anyone.” What have these expectations given you, and what have they cost you?",ja:"「いい子でいて、気を配って、人をがっかりさせないで」——この期待は、あなたに何を与え、何を奪った？"},
+ opts:[
+  {zh:"讓我很會照顧別人，卻常忽略自己",en:"I’m good at caring for others, but often forget myself",ja:"人の世話は得意になったけど、自分を後回しにしがち"},
+  {zh:"讓我很難說「不」",en:"It makes it hard to say no",ja:"「ノー」と言うのが難しくなった"},
+  {zh:"讓我學會體貼，這是好的",en:"It taught me kindness, and that’s good",ja:"思いやりを学べた。それは良いこと"},
+  {zh:"我已經慢慢放下這些期待了",en:"I’ve been slowly letting them go",ja:"少しずつ手放してきた"}],
+ view:{zh:"研究發現，討好他人的傾向和較高的倦怠感、較低的自我價值有關，而女性常從小被期待扮演照顧者。體貼本身是美德，但當它變成「不能拒絕」時，就值得重新思考。",en:"Research links people-pleasing with more burnout and lower self-worth, and many women are raised to be caretakers. Kindness is a virtue, but when it turns into “I can’t say no,” it’s worth rethinking.",ja:"研究では、人に合わせすぎる傾向は燃え尽きや自己価値の低さと関係するとされています。そして多くの女性は、小さいころから世話をする役割を期待されてきました。思いやりは美徳ですが、それが「断れない」になったときは、見直してみる価値があります。"},
+ src:{zh:"性別社會化與討好行為研究",en:"Research on gender socialization and people-pleasing",ja:"ジェンダーの社会化と迎合行動の研究"},
+ talk:{zh:"如果小時候的你，可以不用當「好女孩」，你想對她說什麼？",en:"If the younger you didn’t have to be a “good girl,” what would you tell her?",ja:"「いい子」でいなくてよかったとしたら、子どものころの自分に何と言ってあげたい？"}}
+];
+const KEY="blooming-questions-v1",LKEY="blooming-questions-lang";
+const blank=()=>({i:0,ans:Array(QS.length).fill(null),notes:Array(QS.length).fill("")});
+let state=blank();
+try{const s=JSON.parse(localStorage.getItem(KEY)||"null");if(s&&Array.isArray(s.ans)&&s.ans.length===QS.length)state=s}catch(e){}
+let lang=(()=>{try{const l=localStorage.getItem(LKEY);if(l&&UI[l])return l}catch(e){}
+  const n=(navigator.language||"").toLowerCase();return n.startsWith("ja")?"ja":n.startsWith("zh")?"zh":"en"})();
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}};
+const $=id=>document.getElementById(id);
+const esc=t=>String(t).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const T=o=>o[lang];
+const petals=["--petal-a","--petal-c","--petal-b"];
+function setLang(l){lang=l;try{localStorage.setItem(LKEY,l)}catch(e){}
+  document.documentElement.lang={zh:"zh-Hant",en:"en",ja:"ja"}[l];
+  document.querySelectorAll(".lang button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.l===l));
+  const u=UI[l];$("t-eyebrow").textContent=u.eyebrow;$("t-title").textContent=u.title;$("t-lead").textContent=u.lead;$("t-privacy").textContent=u.privacy;
+  document.title=u.title;render()}
+document.querySelectorAll(".lang button").forEach(b=>b.onclick=()=>setLang(b.dataset.l));
+function progress(){
+  const done=state.i>=QS.length;
+  $("progress").innerHTML=QS.map((_,k)=>{const on=done||k<=state.i;
+    return `<svg viewBox="0 0 24 24"><use href="#flower" width="24" height="24" style="color:var(${on?petals[k%3]:'--line'})"/></svg>`}).join("");
+}
+function render(){
+  progress();const u=UI[lang];
+  if(state.i>=QS.length)return renderSummary();
+  const Q=QS[state.i],a=state.ans[state.i];
+  $("stage").innerHTML=`
+    <svg class="corner" viewBox="0 0 50 50" aria-hidden="true"><use href="#flower" width="50" height="50" style="color:var(${petals[state.i%3]})"/></svg>
+    <div class="qnum">${u.qnum(state.i+1,QS.length)}</div>
+    <span class="theme">${T(Q.theme)}</span>
+    <h2>${T(Q.q)}</h2>
+    <div class="options" role="group">
+      ${Q.opts.map((o,k)=>`<button type="button" class="opt" id="opt-${state.i}-${k}" aria-pressed="${a===k}" data-k="${k}">${T(o)}</button>`).join("")}
+    </div>
+    ${a!==null?`<div class="insight"><p>${T(Q.view)}</p><p class="src">${u.src}${T(Q.src)}</p></div>
+    <div class="talk"><b>${u.talk}</b>${T(Q.talk)}</div>
+    <label for="note-${state.i}">${u.more}</label>
+    <textarea id="note-${state.i}" placeholder="${esc(u.ph)}">${esc(state.notes[state.i])}</textarea>`:''}
+    <div class="nav">
+      <button type="button" class="btn" id="prev" ${state.i===0?'disabled':''}>${u.prev}</button>
+      <button type="button" class="btn primary" id="next" ${a===null?'disabled':''}>${state.i===QS.length-1?u.done:u.next}</button>
+    </div>`;
+  $("stage").querySelectorAll(".opt").forEach(b=>b.onclick=()=>{state.ans[state.i]=+b.dataset.k;save();render();$("opt-"+state.i+"-"+b.dataset.k).focus()});
+  const ta=$("note-"+state.i);if(ta)ta.oninput=()=>{state.notes[state.i]=ta.value;save()};
+  $("prev").onclick=()=>{state.i--;save();render()};
+  $("next").onclick=()=>{state.i++;save();render();window.scrollTo({top:0})};
+}
+function renderSummary(){
+  const u=UI[lang];
+  $("stage").innerHTML=`
+    <svg class="corner" viewBox="0 0 50 50" aria-hidden="true"><use href="#flower" width="50" height="50" style="color:var(--petal-a)"/></svg>
+    <div class="qnum">${u.yours}</div>
+    ${QS.map((Q,k)=>`<div class="summary-item"><div class="q">${k+1}. ${T(Q.q)}</div>
+      <div class="a">${state.ans[k]!==null?T(Q.opts[state.ans[k]]):u.none}</div>
+      ${state.notes[k]?`<div class="n">${esc(state.notes[k])}</div>`:''}</div>`).join("")}
+    <p class="closing">${u.closing}</p>
+    <div class="nav">
+      <button type="button" class="btn" id="copy">${u.copy}</button>
+      <button type="button" class="btn primary" id="again">${u.again}</button>
+    </div>`;
+  $("copy").onclick=async()=>{
+    const txt=u.title+"\n\n"+QS.map((Q,k)=>`${k+1}. ${T(Q.q)}\n→ ${state.ans[k]!==null?T(Q.opts[state.ans[k]]):u.none}${state.notes[k]?'\n  '+state.notes[k]:''}`).join("\n\n")+"\n\n"+location.href;
+    try{await navigator.clipboard.writeText(txt);$("copy").textContent=u.copied}catch(e){$("copy").textContent=u.copyFail}
+  };
+  $("again").onclick=()=>{state=blank();save();render();window.scrollTo({top:0})};
+}
+setLang(lang);
+</script>
+</body>
+</html>

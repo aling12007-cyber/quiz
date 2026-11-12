@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>未來的我與我的優勢 · Future Self & Strengths</title>
+<meta name="description" content="以心理學研究為基礎的兩個小練習：寫下最好的未來自己，並找出自己的性格優勢。Two research-based exercises: your best possible self and your character strengths.">
+<meta property="og:title" content="未來的我與我的優勢 · Future Self & Strengths · 未来の私と私の強み">
+<meta property="og:description" content="Best Possible Self + Character Strengths · 中文 / English / 日本語">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+/* Layout: two chapters on one scroll, each a soft card; research notes tucked at the end of each, like footnotes in a flower journal */
+:root{
+  --bg:#fff4f6; --surface:#ffffff; --fg:#4a2c36; --muted:#8a6470; --line:#f6d3dc;
+  --accent:#e2668b; --accent-soft:#ffe4ec; --on-accent:#ffffff; --talk:#fff8e6;
+  --petal-a:#f7a8bf; --petal-b:#ffc9d6; --petal-c:#f4b6e0; --leaf:#9ccfa4; --center:#ffd36e; --face:#4a2c36;
+  --round:"Zen Maru Gothic","Noto Sans TC","Hiragino Maru Gothic ProN","PingFang TC",sans-serif;
+  --body:"Noto Sans TC","Zen Maru Gothic","PingFang TC","Hiragino Sans","Microsoft JhengHei",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#2a1a22; --surface:#36222c; --fg:#fbe7ee; --muted:#d6a9b8; --line:#55343f;
+  --accent:#ff8fb1; --accent-soft:#4a2a36; --on-accent:#2a1a22; --talk:#3d2c25;
+  --petal-a:#e0789a; --petal-b:#c96a8b; --petal-c:#b974a8; --leaf:#6fa37a; --center:#e7b955; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#2a1a22; --surface:#36222c; --fg:#fbe7ee; --muted:#d6a9b8; --line:#55343f;
+  --accent:#ff8fb1; --accent-soft:#4a2a36; --on-accent:#2a1a22; --talk:#3d2c25;
+  --petal-a:#e0789a; --petal-b:#c96a8b; --petal-c:#b974a8; --leaf:#6fa37a; --center:#e7b955; color-scheme:dark}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.75;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  padding-block:max(24px,env(safe-area-inset-top,0px)) max(48px,env(safe-area-inset-bottom,0px));
+  background-image:radial-gradient(var(--line) 1.2px,transparent 1.4px);background-size:22px 22px;overflow-x:hidden}
+html[lang="ja"] body{font-family:var(--round)}
+main{max-width:640px;margin:0 auto;display:flex;flex-direction:column;gap:26px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.back{font-family:var(--round);font-weight:700;font-size:13px;color:var(--accent);text-decoration:none}
+.lang{display:flex;gap:6px;flex-wrap:wrap}
+.lang button{font:inherit;font-size:13px;font-family:var(--round);font-weight:700;border:1.5px solid var(--line);background:var(--surface);color:var(--muted);border-radius:999px;padding:4px 12px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+header{text-align:center;display:flex;flex-direction:column;align-items:center;gap:6px}
+.mascot{width:96px;height:96px}
+.eyebrow{font-family:var(--round);font-size:13px;letter-spacing:.06em;color:var(--accent);font-weight:700}
+h1{font-family:var(--round);font-size:clamp(25px,6.4vw,33px);line-height:1.3;margin:0;text-wrap:balance}
+.lead{color:var(--muted);margin:0;max-width:32em;text-wrap:balance}
+.jump{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:6px}
+.jump a{font-family:var(--round);font-weight:700;font-size:14px;color:var(--accent);background:var(--surface);border:2px solid var(--line);border-radius:999px;padding:6px 16px;text-decoration:none}
+.card{position:relative;background:var(--surface);border:2px solid var(--line);border-radius:26px;padding:26px 22px;display:flex;flex-direction:column;gap:18px;box-shadow:0 8px 0 var(--line)}
+.card .corner{position:absolute;right:14px;top:-18px;width:46px}
+.part{font-family:var(--round);font-size:13px;color:var(--accent);font-weight:700;letter-spacing:.05em}
+h2{font-family:var(--round);font-size:23px;line-height:1.4;margin:0;text-wrap:balance}
+.intro{margin:0;color:var(--muted)}
+.imagine{background:var(--talk);border:2px dashed var(--center);border-radius:18px;padding:14px 16px;margin:0}
+.field{display:flex;flex-direction:column;gap:8px;padding-top:14px;border-top:2px dashed var(--line)}
+.field:first-of-type{border-top:0;padding-top:0}
+.qlabel{font-family:var(--round);font-weight:700;font-size:16.5px;line-height:1.55}
+.qlabel .tag{display:inline-block;font-size:12px;color:var(--accent);background:var(--accent-soft);border-radius:999px;padding:1px 9px;margin-right:6px;vertical-align:2px}
+.hint{font-size:13px;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:inherit;font-size:14.5px;color:var(--fg);background:var(--bg);border:2px solid var(--line);border-radius:999px;padding:6px 14px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);font-weight:500}
+.chip:disabled{opacity:.45;cursor:default}
+textarea{font:inherit;color:var(--fg);background:var(--bg);border:2px solid var(--line);border-radius:14px;padding:10px 12px;width:100%;min-height:68px;resize:vertical}
+button:focus-visible,textarea:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.btn{font:inherit;font-family:var(--round);font-weight:700;border-radius:999px;padding:10px 24px;cursor:pointer;border:2px solid var(--line);background:var(--surface);color:var(--fg)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent);box-shadow:0 4px 0 var(--petal-a)}
+.btn.primary:active{transform:translateY(2px);box-shadow:0 2px 0 var(--petal-a)}
+.btn:disabled{opacity:.4;cursor:default;box-shadow:none}
+.row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.letter{background:var(--accent-soft);border-radius:20px;padding:20px 18px;display:flex;flex-direction:column;gap:10px;position:relative}
+.letter h3{font-family:var(--round);margin:0;font-size:19px}
+.letter p{margin:0;white-space:pre-wrap}
+.letter .sig{text-align:right;font-family:var(--round);color:var(--accent)}
+.stmt{display:flex;flex-direction:column;gap:8px;padding-top:12px;border-top:2px dashed var(--line)}
+.stmt:first-of-type{border-top:0;padding-top:0}
+.stmt p{margin:0;font-weight:500}
+.scale{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.scale button{font:inherit;font-family:var(--round);font-weight:700;background:var(--bg);color:var(--fg);border:2px solid var(--line);border-radius:12px;padding:8px 0;cursor:pointer}
+.scale button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.scale-labels{display:flex;justify-content:space-between;gap:10px;font-size:12px;color:var(--muted)}
+.counter{font-size:13.5px;color:var(--muted);text-align:center}
+.top5{display:flex;flex-direction:column;gap:12px}
+.strength{background:var(--accent-soft);border-radius:18px;padding:14px 16px;display:flex;flex-direction:column;gap:4px}
+.strength .name{font-family:var(--round);font-weight:700;font-size:17px;display:flex;align-items:center;gap:8px}
+.strength .rank{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--accent);color:var(--on-accent);font-size:13px;flex:none}
+.strength .virtue{font-size:12.5px;color:var(--muted)}
+.strength .tip{font-size:14.5px}
+.strength .tip b{color:var(--accent);font-family:var(--round)}
+.bars{display:flex;flex-direction:column;gap:4px;font-size:13px}
+.bar{display:grid;grid-template-columns:7.5em 1fr 1.6em;gap:8px;align-items:center}
+.bar .track{height:8px;border-radius:4px;background:var(--line);overflow:hidden}
+.bar .fill{height:100%;background:var(--petal-a);border-radius:4px}
+.bar .v{text-align:right;font-variant-numeric:tabular-nums;color:var(--muted)}
+details{border-top:2px dashed var(--line);padding-top:12px}
+summary{font-family:var(--round);font-weight:700;color:var(--accent);cursor:pointer}
+.research{display:flex;flex-direction:column;gap:10px;font-size:14.5px;margin-top:10px}
+.research p{margin:0}
+.refs{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;font-size:13.5px;color:var(--muted)}
+.refs a{color:var(--accent);word-break:break-all}
+.notice{font-size:13px;color:var(--muted);background:var(--bg);border-radius:12px;padding:10px 12px;margin:0}
+.note{font-size:12.5px;color:var(--muted);margin:0;text-align:center}
+footer .garden{display:block;margin:0 auto 8px;width:min(320px,100%)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="flower" viewBox="-50 -50 100 100">
+      <g fill="currentColor">
+        <ellipse rx="17" ry="25" cy="-24"/><ellipse rx="17" ry="25" cy="-24" transform="rotate(72)"/>
+        <ellipse rx="17" ry="25" cy="-24" transform="rotate(144)"/><ellipse rx="17" ry="25" cy="-24" transform="rotate(216)"/>
+        <ellipse rx="17" ry="25" cy="-24" transform="rotate(288)"/>
+      </g>
+      <circle r="13" fill="var(--center)"/>
+    </symbol>
+    <symbol id="leaf" viewBox="0 0 40 20"><path d="M2 10 C12 -2 30 -2 38 10 C30 22 12 22 2 10Z" fill="var(--leaf)"/></symbol>
+  </defs>
+</svg>
+<main>
+  <div class="top">
+    <a class="back" href="./" id="t-back"></a>
+    <nav class="lang" aria-label="Language">
+      <button type="button" id="lang-zh" data-l="zh">中文</button>
+      <button type="button" id="lang-en" data-l="en">English</button>
+      <button type="button" id="lang-ja" data-l="ja">日本語</button>
+    </nav>
+  </div>
+  <header>
+    <svg class="mascot" viewBox="-60 -60 120 120" role="img" aria-label="flower">
+      <g fill="var(--petal-c)">
+        <ellipse rx="20" ry="30" cy="-30"/><ellipse rx="20" ry="30" cy="-30" transform="rotate(60)"/>
+        <ellipse rx="20" ry="30" cy="-30" transform="rotate(120)"/><ellipse rx="20" ry="30" cy="-30" transform="rotate(180)"/>
+        <ellipse rx="20" ry="30" cy="-30" transform="rotate(240)"/><ellipse rx="20" ry="30" cy="-30" transform="rotate(300)"/>
+      </g>
+      <circle r="26" fill="var(--center)"/>
+      <path d="M-13 -3 Q-9 -8 -5 -3" stroke="var(--face)" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+      <path d="M5 -3 Q9 -8 13 -3" stroke="var(--face)" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+      <circle cx="-15" cy="7" r="4.5" fill="#f78fa7" opacity=".7"/><circle cx="15" cy="7" r="4.5" fill="#f78fa7" opacity=".7"/>
+      <path d="M-6 8 Q0 15 6 8" stroke="var(--face)" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+    </svg>
+    <div class="eyebrow" id="t-eyebrow"></div>
+    <h1 id="t-title"></h1>
+    <p class="lead" id="t-lead"></p>
+    <div class="jump"><a href="#future" id="t-jump1"></a><a href="#strengths" id="t-jump2"></a></div>
+  </header>
+
+  <section class="card" id="future">
+    <svg class="corner" viewBox="0 0 50 50" aria-hidden="true"><use href="#flower" width="50" height="50" style="color:var(--petal-a)"/></svg>
+    <div class="part" id="t-p1"></div>
+    <h2 id="t-p1title"></h2>
+    <p class="intro" id="t-p1intro"></p>
+    <p class="imagine" id="t-imagine"></p>
+    <div id="bps"></div>
+    <div class="row"><button type="button" class="btn primary" id="makeLetter"></button></div>
+    <div id="letterBox"></div>
+    <details>
+      <summary id="t-r1sum"></summary>
+      <div class="research" id="r1"></div>
+    </details>
+  </section>
+
+  <section class="card" id="strengths">
+    <svg class="corner" viewBox="0 0 50 50" aria-hidden="true"><use href="#flower" width="50" height="50" style="color:var(--petal-c)"/></svg>
+    <div class="part" id="t-p2"></div>
+    <h2 id="t-p2title"></h2>
+    <p class="intro" id="t-p2intro"></p>
+    <p class="notice" id="t-notice"></p>
+    <div class="scale-labels"><span id="t-s1"></span><span id="t-s5"></span></div>
+    <div id="sq"></div>
+    <p class="counter" id="counter"></p>
+    <div class="row"><button type="button" class="btn primary" id="showStrengths"></button></div>
+    <div id="strengthBox"></div>
+    <details>
+      <summary id="t-r2sum"></summary>
+      <div class="research" id="r2"></div>
+    </details>
+  </section>
+
+  <footer>
+    <svg class="garden" viewBox="0 0 320 60" aria-hidden="true">
+      <path d="M0 52 Q80 44 160 52 T320 52" stroke="var(--leaf)" stroke-width="3" fill="none"/>
+      <use href="#flower" x="18" y="18" width="30" height="30" style="color:var(--petal-a)"/>
+      <use href="#leaf" x="50" y="38" width="22" height="11"/>
+      <use href="#flower" x="92" y="26" width="22" height="22" style="color:var(--petal-c)"/>
+      <use href="#flower" x="148" y="12" width="36" height="36" style="color:var(--petal-b)"/>
+      <use href="#leaf" x="186" y="38" width="22" height="11"/>
+      <use href="#flower" x="222" y="24" width="24" height="24" style="color:var(--petal-a)"/>
+      <use href="#flower" x="276" y="16" width="30" height="30" style="color:var(--petal-c)"/>
+    </svg>
+    <p class="note" id="t-privacy"></p>
+  </footer>
+</main>
+<script>
+const UI={
+zh:{back:"← 回到「花開的提問」",eyebrow:"兩個有研究基礎的自我探索練習",title:"未來的我與我的優勢",
+ lead:"第一部分想像你想過的生活，第二部分找出你本來就擁有的力量。大約需要 10–15 分鐘。",jump1:"① 最好的未來自己",jump2:"② 我的性格優勢",
+ p1:"第一部分",p1title:"最好的未來自己",p1intro:"這是正向心理學中被研究最多的練習之一。不用寫得完美，每題一兩句話就好。",
+ imagine:"請想像：幾年後，你一直很努力，事情也都朝你希望的方向發展，你實現了大部分重要的目標。接下來，請用這個「最好的未來自己」來回答。",
+ multi:"可複選",max2:"最多選兩個",write:"寫一兩句就好",makeLetter:"整理成「來自未來的我」",
+ letterTitle:"來自未來的我",letterYears:y=>`${y} 年後的我想告訴你：`,sig:"愛你的，未來的我",
+ again:"研究發現，連續幾天、每天想像一次，效果會更好。明天可以再回來寫一次。",copy:"複製這封信",copied:"已複製",copyFail:"無法複製，請手動選取",empty:"先寫下一些內容，再來整理成信吧。",
+ r1sum:"研究說明與參考資料",
+ p2:"第二部分",p2title:"我的性格優勢（簡易版）",p2intro:"下面 24 句描述，各自對應一種性格優勢。依照每句話「有多像你」選 1 到 5 分，最後會整理出你最突出的五項優勢。",
+ notice:"這是根據 VIA 性格優勢分類自行設計的簡易版本，題目並非官方 VIA 測驗，也未經信效度驗證，僅供參考。想得到正式結果，請到 VIA Institute 官方網站免費施測。",
+ s1:"1 一點也不像我",s5:"5 非常像我",count:(n,t)=>`已完成 ${n} / ${t} 題`,show:"看看我的優勢",need:"請先回答全部題目。",
+ top:"你的前五項優勢",tryLabel:"這週試試看：",all:"完整排序",r2sum:"研究說明與參考資料",
+ privacy:"你的回答只存在這台裝置的瀏覽器裡，不會上傳到任何地方。本頁內容僅供自我探索，不能取代專業心理諮商。"},
+en:{back:"← Back to Blooming Questions",eyebrow:"Two research-based exercises for knowing yourself",title:"Future Self & Strengths",
+ lead:"Part 1 imagines the life you want. Part 2 finds the strengths you already have. About 10–15 minutes.",jump1:"① Best Possible Self",jump2:"② My Character Strengths",
+ p1:"Part 1",p1title:"Your Best Possible Self",p1intro:"One of the most studied exercises in positive psychology. It doesn’t need to be perfect — a sentence or two per question is enough.",
+ imagine:"Imagine: a few years from now, you’ve worked hard and things have gone the way you hoped. You’ve reached most of the goals that matter to you. Answer as that best possible future self.",
+ multi:"Choose any",max2:"Choose up to two",write:"A sentence or two is enough",makeLetter:"Turn it into a letter from my future self",
+ letterTitle:"A letter from my future self",letterYears:y=>`From me, ${y} year${y>1?"s":""} from now:`,sig:"With love, future me",
+ again:"Research suggests imagining this on a few days in a row works even better. Come back tomorrow and write again.",copy:"Copy this letter",copied:"Copied",copyFail:"Couldn’t copy — please select the text",empty:"Write a little first, then turn it into a letter.",
+ r1sum:"Research and references",
+ p2:"Part 2",p2title:"My Character Strengths (quick version)",p2intro:"Each of the 24 statements below matches one character strength. Rate how much each sounds like you, from 1 to 5. You’ll see your top five strengths at the end.",
+ notice:"This is a simplified version written for this site, based on the VIA classification of character strengths. These are not the official VIA items and have not been validated. For official results, take the free survey on the VIA Institute website.",
+ s1:"1 Not like me at all",s5:"5 Very much like me",count:(n,t)=>`${n} of ${t} answered`,show:"Show my strengths",need:"Please answer every statement first.",
+ top:"Your top five strengths",tryLabel:"Try this week: ",all:"Full ranking",r2sum:"Research and references",
+ privacy:"Your answers stay in this browser on this device and are never uploaded. For self-exploration only; not a substitute for professional counseling."},
+ja:{back:"← 「花ひらく問い」に戻る",eyebrow:"研究にもとづく、自分を知るための2つのワーク",title:"未来の私と私の強み",
+ lead:"第1部では送りたい人生を思い描き、第2部では今すでに持っている強みを見つけます。所要時間は約10〜15分です。",jump1:"① ベスト・ポッシブル・セルフ",jump2:"② 私の強み",
+ p1:"第1部",p1title:"最高の未来の自分",p1intro:"ポジティブ心理学で最もよく研究されているワークのひとつです。完璧でなくて大丈夫。各問1〜2文で十分です。",
+ imagine:"想像してみてください。数年後、あなたは努力を重ね、物事は望んだとおりに進み、大切な目標のほとんどを叶えています。その「最高の未来の自分」として答えてください。",
+ multi:"複数選択可",max2:"2つまで",write:"1〜2文で大丈夫",makeLetter:"「未来の私からの手紙」にまとめる",
+ letterTitle:"未来の私からの手紙",letterYears:y=>`${y}年後の私から、あなたへ：`,sig:"愛をこめて　未来の私より",
+ again:"研究によると、数日続けて思い描くと、さらに効果的です。明日もう一度書いてみましょう。",copy:"手紙をコピー",copied:"コピーしました",copyFail:"コピーできませんでした。手動で選択してください",empty:"まず少し書いてから、手紙にまとめましょう。",
+ r1sum:"研究の解説と参考資料",
+ p2:"第2部",p2title:"私の強み（簡易版）",p2intro:"下の24の文は、それぞれひとつの強みに対応しています。どのくらい自分に当てはまるか、1〜5で選んでください。最後に、あなたのトップ5の強みが表示されます。",
+ notice:"これはVIAの「強み」の分類をもとに、このサイトのために作った簡易版です。公式のVIAの質問ではなく、信頼性・妥当性の検証も行っていません。正式な結果は、VIA Instituteの公式サイトで無料で受けられます。",
+ s1:"1 まったく当てはまらない",s5:"5 とても当てはまる",count:(n,t)=>`${t}問中 ${n}問 回答済み`,show:"私の強みを見る",need:"すべての質問に答えてください。",
+ top:"あなたのトップ5の強み",tryLabel:"今週やってみよう：",all:"すべての順位",r2sum:"研究の解説と参考資料",
+ privacy:"回答はこの端末のブラウザにだけ保存され、どこにも送信されません。自己探索のための内容であり、専門のカウンセリングの代わりにはなりません。"}
+};
+const BPS=[
+ {id:"years",type:"one",tag:{zh:"時間",en:"When",ja:"いつ"},q:{zh:"你想像的是幾年後？",en:"How far ahead are you imagining?",ja:"何年後を想像していますか？"},
+  opts:[1,3,5,10].map(n=>({v:n,zh:`${n} 年後`,en:`${n} year${n>1?"s":""}`,ja:`${n}年後`}))},
+ {id:"feel",type:"multi",tag:{zh:"感受",en:"Feeling",ja:"気持ち"},q:{zh:"那時候，你最常有的感覺是？",en:"What do you feel most often then?",ja:"そのころ、いちばんよく感じている気持ちは？"},
+  opts:[{zh:"平靜安心",en:"calm and secure",ja:"穏やかで安心"},{zh:"自由",en:"free",ja:"自由"},{zh:"有成就感",en:"accomplished",ja:"達成感がある"},{zh:"被愛",en:"loved",ja:"愛されている"},{zh:"充滿活力",en:"full of energy",ja:"元気いっぱい"},{zh:"感恩",en:"grateful",ja:"感謝している"}]},
+ {id:"self",type:"text",tag:{zh:"我自己",en:"Myself",ja:"自分"},q:{zh:"那時的你，早上醒來後，一天是怎麼開始的？",en:"When you wake up then, how does your day begin?",ja:"そのころのあなたは、朝起きてからどんなふうに一日を始めますか？"}},
+ {id:"home",type:"text",tag:{zh:"我的生活",en:"My life",ja:"暮らし"},q:{zh:"你住在哪裡？家裡是什麼樣子？",en:"Where do you live? What is your home like?",ja:"どこに住んでいますか？家はどんな様子ですか？"}},
+ {id:"people",type:"text",tag:{zh:"身邊的人",en:"People",ja:"まわりの人"},q:{zh:"誰在你身邊？你們的關係是什麼樣子？",en:"Who is around you? What are those relationships like?",ja:"誰がそばにいますか？どんな関係ですか？"}},
+ {id:"work",type:"text",tag:{zh:"工作與熱情",en:"Work & passion",ja:"仕事と情熱"},q:{zh:"你在做什麼，讓你覺得有意義？",en:"What are you doing that feels meaningful?",ja:"何をしていて、意味があると感じていますか？"}},
+ {id:"scene",type:"text",tag:{zh:"畫面",en:"Picture",ja:"情景"},q:{zh:"閉上眼睛 30 秒，想像那一天。你看到最清楚的畫面是什麼？",en:"Close your eyes for 30 seconds and picture that day. What’s the clearest image you see?",ja:"30秒だけ目を閉じて、その日を思い浮かべてください。いちばんはっきり見えた情景は？"}},
+ {id:"values",type:"multi",max:2,tag:{zh:"價值",en:"Values",ja:"価値"},q:{zh:"這個未來裡，你最重視的是什麼？",en:"What matters most to you in this future?",ja:"この未来で、いちばん大切にしているものは？"},
+  opts:[{zh:"安穩",en:"stability",ja:"安定"},{zh:"自由",en:"freedom",ja:"自由"},{zh:"成長",en:"growth",ja:"成長"},{zh:"愛與連結",en:"love and connection",ja:"愛とつながり"},{zh:"健康",en:"health",ja:"健康"},{zh:"創造",en:"creativity",ja:"創造"},{zh:"幫助他人",en:"helping others",ja:"人の役に立つこと"}]},
+ {id:"step",type:"text",tag:{zh:"第一步",en:"First step",ja:"最初の一歩"},q:{zh:"這個月，你可以朝它跨出的一小步是什麼？",en:"What’s one small step toward it you can take this month?",ja:"今月、そこへ向かってできる小さな一歩は？"}}
+];
+const VIRTUE={wis:{zh:"智慧",en:"Wisdom",ja:"知恵"},cou:{zh:"勇氣",en:"Courage",ja:"勇気"},hum:{zh:"仁愛",en:"Humanity",ja:"人間性"},jus:{zh:"正義",en:"Justice",ja:"正義"},tem:{zh:"節制",en:"Temperance",ja:"節度"},tra:{zh:"超越",en:"Transcendence",ja:"超越性"}};
+const S=[
+ ["wis",{zh:"創造力",en:"Creativity",ja:"創造性"},{zh:"遇到問題時，我喜歡想出別人沒想到的辦法。",en:"When I hit a problem, I like finding a solution no one else thought of.",ja:"問題にぶつかると、人が思いつかない方法を考えるのが好きだ。"},{zh:"用不同的方式完成一件日常小事，例如換條路回家、用剩下的食材做一道新菜。",en:"Do one everyday task a new way, like a different route home or a new dish from leftovers.",ja:"いつもと違う方法で日常のことをしてみる。帰り道を変える、残り物で新しい料理を作る、など。"}],
+ ["wis",{zh:"好奇心",en:"Curiosity",ja:"好奇心"},{zh:"對沒接觸過的事物，我常常忍不住想多了解一點。",en:"I can’t help wanting to know more about things I haven’t tried.",ja:"知らないことに出会うと、つい詳しく知りたくなる。"},{zh:"去一個沒去過的地方，或問身邊的人一個你從沒問過的問題。",en:"Visit somewhere new, or ask someone close a question you’ve never asked.",ja:"行ったことのない場所へ行く。身近な人に、まだ聞いたことのない質問をしてみる。"}],
+ ["wis",{zh:"判斷力",en:"Judgment",ja:"判断力"},{zh:"做決定前，我會從不同角度想清楚，不急著下結論。",en:"Before deciding, I look at things from different angles instead of rushing.",ja:"決める前に、いろいろな角度から考え、結論を急がない。"},{zh:"找一個你有既定看法的議題，認真寫下支持另一方的三個理由。",en:"Pick a topic you have a firm view on and write three good reasons for the other side.",ja:"自分の意見が決まっているテーマを選び、反対側の立場の理由を3つ書いてみる。"}],
+ ["wis",{zh:"好學",en:"Love of learning",ja:"向学心"},{zh:"學會一項新知識或技能，會讓我很開心。",en:"Learning a new skill or idea makes me genuinely happy.",ja:"新しい知識やスキルを身につけると、とてもうれしい。"},{zh:"每天花 15 分鐘學一樣想學的東西，一週後回頭看看學到了什麼。",en:"Spend 15 minutes a day learning something you’re curious about; look back after a week.",ja:"毎日15分、学びたいことに使う。1週間後に何を学んだか振り返る。"}],
+ ["wis",{zh:"洞察力",en:"Perspective",ja:"大局観"},{zh:"朋友遇到困難時，常會來問我的看法。",en:"Friends often come to me for advice when things are hard.",ja:"友だちは困ったとき、よく私に意見を聞きに来る。"},{zh:"想一個正在困擾你的問題，問自己：五年後回頭看，它還重要嗎？",en:"Take something bothering you and ask: will this matter in five years?",ja:"悩んでいることを一つ選び、「5年後もこれは大事？」と自分に聞いてみる。"}],
+ ["cou",{zh:"勇敢",en:"Bravery",ja:"勇敢さ"},{zh:"就算會害怕，我也會說出或做出我認為對的事。",en:"Even when I’m scared, I’ll say or do what I believe is right.",ja:"怖くても、正しいと思うことは言うし、行動する。"},{zh:"做一件讓你有點緊張、但對你有意義的小事，例如在會議中先發言。",en:"Do one small thing that makes you a bit nervous but matters, like speaking first in a meeting.",ja:"少し緊張するけれど大切な小さなことをする。会議で最初に発言する、など。"}],
+ ["cou",{zh:"毅力",en:"Perseverance",ja:"忍耐力"},{zh:"開始一件事後，就算遇到困難，我也會想辦法完成。",en:"Once I start something, I find a way to finish it, even when it gets hard.",ja:"一度始めたことは、難しくなってもやり遂げようとする。"},{zh:"把一件拖延很久的事拆成三個小步驟，今天先完成第一步。",en:"Break a long-delayed task into three small steps and finish the first one today.",ja:"先延ばしにしていることを3つの小さなステップに分け、今日1つ目を終わらせる。"}],
+ ["cou",{zh:"正直",en:"Honesty",ja:"誠実さ"},{zh:"我寧願說真話，也不想假裝成不是自己的樣子。",en:"I’d rather tell the truth than pretend to be someone I’m not.",ja:"自分を偽るより、本当のことを言いたい。"},{zh:"這週練習一次，溫和地說出一個你平常會吞下去的真實感受。",en:"This week, gently say one true feeling you’d usually keep to yourself.",ja:"今週一度、いつもは飲み込んでしまう本当の気持ちを、やさしく伝えてみる。"}],
+ ["cou",{zh:"熱忱",en:"Zest",ja:"熱意"},{zh:"我做事時常充滿活力，也容易感染身邊的人。",en:"I tend to bring energy to what I do, and it rubs off on others.",ja:"何をするにも元気があり、まわりにもそれが伝わる。"},{zh:"每天安排一件讓你期待的小事，並在做的時候全心投入。",en:"Plan one small thing to look forward to each day, and throw yourself into it.",ja:"毎日ひとつ楽しみなことを予定に入れ、そのときは思いきり楽しむ。"}],
+ ["hum",{zh:"愛",en:"Love",ja:"愛情"},{zh:"和重要的人之間的親密感，對我來說非常珍貴。",en:"Closeness with the people who matter to me is precious to me.",ja:"大切な人との親密さは、私にとってかけがえのないものだ。"},{zh:"寫一則訊息，具體告訴一個重要的人，你為什麼珍惜他。",en:"Send a message telling someone important exactly why you treasure them.",ja:"大切な人に、なぜその人を大事に思っているのか具体的にメッセージで伝える。"}],
+ ["hum",{zh:"善良",en:"Kindness",ja:"親切心"},{zh:"看到別人需要幫忙，我會很自然地伸出手。",en:"When someone needs help, I naturally step in.",ja:"困っている人を見ると、自然と手を差し伸べている。"},{zh:"每天做一件不求回報的小善事。也別忘了，對自己做一件。",en:"Do one small kindness a day with no expectation — and one for yourself too.",ja:"毎日ひとつ、見返りを求めない小さな親切をする。自分自身にもひとつ。"}],
+ ["hum",{zh:"社交智慧",en:"Social intelligence",ja:"社会的知性"},{zh:"我很容易察覺別人的情緒，也知道怎麼讓人自在。",en:"I easily sense how others feel and know how to put people at ease.",ja:"人の気持ちに気づきやすく、相手をリラックスさせる方法がわかる。"},{zh:"今天和一個人聊天時，試著說出你感覺到的他的情緒，看看猜得準不準。",en:"In a conversation today, name the feeling you sense in the other person and see if you’re right.",ja:"今日だれかと話すとき、相手から感じた気持ちを言葉にして、当たっているか確かめてみる。"}],
+ ["jus",{zh:"團隊合作",en:"Teamwork",ja:"チームワーク"},{zh:"在團體中，我很願意為大家的目標盡一份力。",en:"In a group, I’m glad to do my part for the shared goal.",ja:"グループの中では、みんなの目標のために進んで力を貸す。"},{zh:"在工作或社團中，主動幫忙一件不在你分內、但能讓大家更順利的事。",en:"At work or in a group, help with something outside your role that makes things easier for everyone.",ja:"職場やサークルで、自分の担当外でもみんなが助かることを進んで手伝う。"}],
+ ["jus",{zh:"公平",en:"Fairness",ja:"公平さ"},{zh:"我很在意每個人是否被公平對待。",en:"I care a lot about whether everyone is treated fairly.",ja:"みんなが公平に扱われているかを、とても気にかける。"},{zh:"留意一次你可能對某人有先入為主的時刻，試著重新認識他。",en:"Notice one moment you may have prejudged someone, and try to see them fresh.",ja:"誰かを先入観で見ていたかもしれない瞬間に気づき、改めてその人を知ろうとしてみる。"}],
+ ["jus",{zh:"領導力",en:"Leadership",ja:"リーダーシップ"},{zh:"需要有人帶頭時，我常是那個把大家組織起來的人。",en:"When someone needs to take the lead, I’m often the one who organizes everyone.",ja:"誰かが先頭に立つ必要があるとき、みんなをまとめるのは私であることが多い。"},{zh:"主動規劃一次小聚會或活動，並讓每個人都有參與的角色。",en:"Plan a small gathering or activity and give everyone a part to play.",ja:"小さな集まりやイベントを企画し、全員に役割をつくる。"}],
+ ["tem",{zh:"寬恕",en:"Forgiveness",ja:"寛容さ"},{zh:"別人犯錯後，我通常願意再給他一次機會。",en:"When someone makes a mistake, I’m usually willing to give them another chance.",ja:"人が失敗しても、たいていもう一度チャンスをあげたいと思う。"},{zh:"寫下一件你還放不下的小事，再寫一句「我選擇放下它，是為了我自己」。",en:"Write down one small thing you’re still holding onto, then write: “I’m letting this go for my own sake.”",ja:"まだ手放せない小さな出来事を書き、「自分のために、これを手放す」と書き添える。"}],
+ ["tem",{zh:"謙遜",en:"Humility",ja:"謙虚さ"},{zh:"我不太需要別人的注目，也樂於讓其他人發光。",en:"I don’t need the spotlight and I’m happy to let others shine.",ja:"注目されなくても平気で、ほかの人が輝くのを喜べる。"},{zh:"這週多聽少說一次，並真誠地稱讚一個人的貢獻。",en:"This week, listen more than you speak once, and sincerely credit someone’s contribution.",ja:"今週一度、話すより聞くことを意識し、誰かの貢献を心からほめる。"}],
+ ["tem",{zh:"謹慎",en:"Prudence",ja:"思慮深さ"},{zh:"我做事前會先考慮可能的風險，不太衝動。",en:"I think through the risks before acting and rarely act on impulse.",ja:"行動する前にリスクを考え、衝動的に動くことはあまりない。"},{zh:"做重要決定前，寫下「最好、最壞、最可能」三種結果。",en:"Before an important decision, write down the best, worst and most likely outcomes.",ja:"大事な決断の前に、「最高・最悪・いちばんありそうな」3つの結果を書き出す。"}],
+ ["tem",{zh:"自我調節",en:"Self-regulation",ja:"自己調整"},{zh:"情緒上來時，我通常能先穩住自己，再做反應。",en:"When emotions run high, I can usually steady myself before reacting.",ja:"感情が高ぶっても、たいていは落ち着いてから反応できる。"},{zh:"選一個小習慣，例如每天固定時間睡覺，連續七天做到。",en:"Pick one small habit, like a fixed bedtime, and keep it for seven days.",ja:"毎日同じ時間に寝るなど、小さな習慣をひとつ選び、7日間続ける。"}],
+ ["tra",{zh:"欣賞美與卓越",en:"Appreciation of beauty",ja:"審美心"},{zh:"大自然、藝術或別人的精湛表現，常會讓我很感動。",en:"Nature, art or someone’s excellent work often moves me.",ja:"自然や芸術、人のすばらしい技に、よく心を動かされる。"},{zh:"每天拍下或記下一個讓你覺得美的瞬間。",en:"Each day, photograph or note one moment you find beautiful.",ja:"毎日ひとつ、美しいと感じた瞬間を写真やメモに残す。"}],
+ ["tra",{zh:"感恩",en:"Gratitude",ja:"感謝"},{zh:"我常留意生活中值得感謝的人和事。",en:"I often notice the people and things in my life I’m thankful for.",ja:"日々の中で、ありがたいと思える人や出来事によく気づく。"},{zh:"每晚寫下三件今天的好事，以及它們為什麼會發生。",en:"Each night, write three good things from today and why they happened.",ja:"毎晩、今日あったよいことを3つと、それが起きた理由を書く。"}],
+ ["tra",{zh:"希望",en:"Hope",ja:"希望"},{zh:"就算現在不順，我也相信未來會變好。",en:"Even when things are hard, I believe the future can get better.",ja:"今うまくいかなくても、未来はよくなると信じている。"},{zh:"回到第一部分，再讀一次你的「來自未來的我」，並完成你寫下的那一小步。",en:"Reread your letter from Part 1 and take the small step you wrote down.",ja:"第1部の「未来の私からの手紙」を読み返し、書いた小さな一歩を実行する。"}],
+ ["tra",{zh:"幽默",en:"Humor",ja:"ユーモア"},{zh:"我喜歡讓身邊的人笑，也能在困難中找到好笑的地方。",en:"I like making people laugh and can find something funny even in hard times.",ja:"人を笑わせるのが好きで、つらいときにも面白さを見つけられる。"},{zh:"每天記下一件讓你笑出來的事，並分享給一個人。",en:"Each day, note one thing that made you laugh and share it with someone.",ja:"毎日、笑ったことをひとつメモして、誰かとシェアする。"}],
+ ["tra",{zh:"靈性",en:"Spirituality",ja:"スピリチュアリティ"},{zh:"我覺得自己的人生，和某種更大的意義相連。",en:"I feel my life is connected to some larger meaning.",ja:"自分の人生は、もっと大きな意味とつながっていると感じる。"},{zh:"每天花五分鐘安靜下來，想想今天做的事，和你重視的意義有什麼關係。",en:"Take five quiet minutes a day to reflect on how today connected to what gives your life meaning.",ja:"毎日5分、静かに過ごし、今日したことが自分の大切にしている意味とどうつながっているか考える。"}]
+];
+const RES={
+ r1:{zh:["<b>這是什麼？</b>「最好的未來自己」（Best Possible Self）是請人想像未來一切順利、目標都實現時的生活，並把它寫下來。心理學家 Laura King 在 2001 年提出，原始研究是每天寫約 20 分鐘，連續四天。","<b>研究發現了什麼？</b>King 的研究發現，參與者在書寫後幾週，正向情緒提升，生病就醫的次數也較少。Sheldon 與 Lyubomirsky（2006）把想像分成個人、人際、事業三個面向，發現持續練習能提升並維持正向情緒。2019 年一篇整合 29 項研究的統合分析，也確認它對樂觀和正向情緒有效。","<b>為什麼有效？</b>一般認為，它讓人釐清自己真正重視的目標，也讓這些目標感覺更有可能實現。本頁是約 5–10 分鐘的簡易版，效果可能比原版弱，建議連續幾天重複書寫。"],
+   en:["<b>What is it?</b> The Best Possible Self exercise asks you to imagine your future when everything has gone well and your goals have come true, and to write it down. Psychologist Laura King introduced it in 2001; the original study had people write for about 20 minutes a day for four days.","<b>What did research find?</b> King found participants had more positive mood and fewer illness-related visits in the following weeks. Sheldon and Lyubomirsky (2006) split the exercise into personal, relational and career areas and found regular practice raised and sustained positive emotion. A 2019 meta-analysis of 29 studies confirmed effects on optimism and positive affect.","<b>Why does it work?</b> It seems to clarify which goals truly matter to you and make them feel more achievable. This page is a short 5–10 minute version, so its effect may be smaller; repeating it on several days is recommended."],
+   ja:["<b>どんなワーク？</b>「ベスト・ポッシブル・セルフ」は、すべてがうまくいき目標が叶った未来の自分を想像し、書き出すワークです。心理学者ローラ・キングが2001年に発表し、元の研究では1日約20分、4日間続けて書いてもらいました。","<b>研究でわかったこと</b>キングの研究では、参加者はその後数週間、ポジティブな気分が高まり、体調不良での受診も少なくなりました。シェルドンとリュボミアスキー（2006）は個人・人間関係・仕事の3つの領域に分けて行い、続けることでポジティブな感情が高まり維持されることを示しました。2019年の29研究のメタ分析でも、楽観性とポジティブ感情への効果が確認されています。","<b>なぜ効くの？</b>本当に大切な目標がはっきりし、それが実現できそうだと感じられるようになるためだと考えられています。このページは5〜10分の簡易版なので、効果は元の研究より小さいかもしれません。数日続けて書くのがおすすめです。"]},
+ r2:{zh:["<b>這是什麼？</b>心理學家 Christopher Peterson 與 Martin Seligman 在 2004 年整理出 24 項跨文化普遍被重視的性格優勢，分屬智慧、勇氣、仁愛、正義、節制、超越六大美德，稱為 VIA 分類。","<b>研究發現了什麼？</b>Seligman 等人（2005）的研究發現，連續一週「每天用一種新的方式使用自己的招牌優勢」，之後六個月內幸福感提升、憂鬱症狀減少。其他研究也發現，常使用自己優勢的人，生活滿意度和工作投入度較高。","<b>關於本頁的簡易版：</b>這裡的 24 句描述是為本網站自行撰寫的，並非官方 VIA 測驗題目，也未經驗證，只能作為參考。官方的 VIA 測驗約 96 題，可在 VIA Institute 網站免費作答，並有繁體中文版本。"],
+   en:["<b>What is it?</b> In 2004, psychologists Christopher Peterson and Martin Seligman identified 24 character strengths valued across cultures, grouped under six virtues: wisdom, courage, humanity, justice, temperance and transcendence. This is the VIA classification.","<b>What did research find?</b> Seligman and colleagues (2005) found that using one of your top strengths in a new way every day for a week increased happiness and reduced depressive symptoms for up to six months. Other studies link using your strengths often with higher life satisfaction and engagement at work.","<b>About this quick version:</b> The 24 statements here were written for this site. They are not official VIA items and have not been validated, so treat the results as a starting point. The official VIA Survey (about 96 items) is free on the VIA Institute website, in many languages."],
+   ja:["<b>どんなもの？</b>心理学者クリストファー・ピーターソンとマーティン・セリグマンは2004年、文化を超えて大切にされる24の「強み」を、知恵・勇気・人間性・正義・節度・超越性という6つの美徳に分類しました。これがVIA分類です。","<b>研究でわかったこと</b>セリグマンら（2005）の研究では、1週間、毎日自分の上位の強みを新しい方法で使ったところ、その後6か月にわたって幸福感が高まり、抑うつ症状が減りました。強みをよく使う人ほど、生活満足度や仕事への熱意が高いという研究もあります。","<b>この簡易版について</b>ここにある24の文は、このサイトのために書いたもので、公式のVIAの質問ではなく、検証もされていません。結果は参考程度にしてください。公式のVIAサーベイ（約96問）は、VIA Instituteのウェブサイトで日本語でも無料で受けられます。"]}
+};
+const REFS={
+ r1:[
+  `King, L. A. (2001). The health benefits of writing about life goals. <i>Personality and Social Psychology Bulletin, 27</i>(7), 798–807. <a href="https://doi.org/10.1177/0146167201277003" target="_blank" rel="noopener">doi.org/10.1177/0146167201277003</a>`,
+  `Sheldon, K. M., & Lyubomirsky, S. (2006). How to increase and sustain positive emotion: The effects of expressing gratitude and visualizing best possible selves. <i>The Journal of Positive Psychology, 1</i>(2), 73–82. <a href="https://doi.org/10.1080/17439760500510676" target="_blank" rel="noopener">doi.org/10.1080/17439760500510676</a>`,
+  `Carrillo, A., et al. (2019). Effects of the Best Possible Self intervention: A systematic review and meta-analysis. <i>PLOS ONE, 14</i>(9), e0222386. <a href="https://doi.org/10.1371/journal.pone.0222386" target="_blank" rel="noopener">doi.org/10.1371/journal.pone.0222386</a>`,
+  `Greater Good in Action（UC Berkeley Greater Good Science Center）: Best Possible Self. <a href="https://ggia.berkeley.edu/practice/best_possible_self" target="_blank" rel="noopener">ggia.berkeley.edu/practice/best_possible_self</a>`],
+ r2:[
+  `Peterson, C., & Seligman, M. E. P. (2004). <i>Character Strengths and Virtues: A Handbook and Classification.</i> Oxford University Press / American Psychological Association.`,
+  `Seligman, M. E. P., Steen, T. A., Park, N., & Peterson, C. (2005). Positive psychology progress: Empirical validation of interventions. <i>American Psychologist, 60</i>(5), 410–421. <a href="https://doi.org/10.1037/0003-066X.60.5.410" target="_blank" rel="noopener">doi.org/10.1037/0003-066X.60.5.410</a>`,
+  `VIA Institute on Character — <span data-k="via"></span> <a href="https://www.viacharacter.org" target="_blank" rel="noopener">www.viacharacter.org</a>`]
+};
+const VIA_LABEL={zh:"官方免費 VIA 性格優勢測驗：",en:"Official free VIA Survey:",ja:"公式・無料のVIAサーベイ："};
+
+const KEY="future-strengths-v1",LKEY="blooming-questions-lang";
+let st={bps:{},sc:Array(S.length).fill(null),letter:false,showS:false};
+try{const s=JSON.parse(localStorage.getItem(KEY)||"null");if(s&&s.bps&&Array.isArray(s.sc)&&s.sc.length===S.length)st=s}catch(e){}
+let lang=(()=>{try{const l=localStorage.getItem(LKEY);if(l&&UI[l])return l}catch(e){}
+  const n=(navigator.language||"").toLowerCase();return n.startsWith("ja")?"ja":n.startsWith("zh")?"zh":"en"})();
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}};
+const $=id=>document.getElementById(id);
+const esc=t=>String(t??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const T=o=>o[lang];
+
+function setLang(l){lang=l;try{localStorage.setItem(LKEY,l)}catch(e){}
+  document.documentElement.lang={zh:"zh-Hant",en:"en",ja:"ja"}[l];
+  document.querySelectorAll(".lang button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.l===l));
+  const u=UI[l];
+  for(const k of ["back","eyebrow","title","lead","jump1","jump2","p1","p1title","p1intro","imagine","r1sum","p2","p2title","p2intro","notice","s1","s5","r2sum","privacy"]){const el=$("t-"+k);if(el)el.textContent=u[k]}
+  $("makeLetter").textContent=u.makeLetter;$("showStrengths").textContent=u.show;
+  document.title=u.title;
+  renderBPS();renderLetter();renderSQ();renderStrengths();renderRes();
+}
+document.querySelectorAll(".lang button").forEach(b=>b.onclick=()=>setLang(b.dataset.l));
+
+function renderBPS(){
+  const u=UI[lang];
+  $("bps").innerHTML=BPS.map((f,i)=>{
+    const v=st.bps[f.id];
+    let body="";
+    if(f.type==="text") body=`<textarea id="b-${f.id}" placeholder="${esc(u.write)}">${esc(v)}</textarea>`;
+    else{
+      const sel=f.type==="one"?(v??null):(v||[]);
+      const full=f.max&&sel.length>=f.max;
+      body=`<div class="chips" role="group">${f.opts.map((o,k)=>{
+        const on=f.type==="one"?sel===k:sel.includes(k);
+        return `<button type="button" class="chip" id="b-${f.id}-${k}" data-f="${f.id}" data-k="${k}" aria-pressed="${on}" ${!on&&full?"disabled":""}>${T(o)}</button>`}).join("")}</div>`;
+    }
+    const hint=f.type==="multi"?`<span class="hint">${f.max?u.max2:u.multi}</span>`:"";
+    return `<div class="field"><label class="qlabel" ${f.type==="text"?`for="b-${f.id}"`:""}><span class="tag">${T(f.tag)}</span>${i+1}. ${T(f.q)}</label>${hint}${body}</div>`;
+  }).join("");
+  BPS.forEach(f=>{
+    if(f.type==="text"){const ta=$("b-"+f.id);ta.oninput=()=>{st.bps[f.id]=ta.value;save()}}
+  });
+  $("bps").querySelectorAll(".chip").forEach(b=>b.onclick=()=>{
+    const f=BPS.find(x=>x.id===b.dataset.f),k=+b.dataset.k;
+    if(f.type==="one") st.bps[f.id]=st.bps[f.id]===k?null:k;
+    else{let a=st.bps[f.id]||[];a=a.includes(k)?a.filter(x=>x!==k):a.concat(k);st.bps[f.id]=a}
+    save();renderBPS();$(`b-${f.id}-${k}`)?.focus();
+  });
+}
+function letterText(){
+  const u=UI[lang],b=st.bps;
+  const yrs=b.years!=null?BPS[0].opts[b.years].v:null;
+  const list=(id)=>{const f=BPS.find(x=>x.id===id);return (b[id]||[]).map(k=>T(f.opts[k]))};
+  const join=a=>lang==="en"?a.join(", "):a.join("、");
+  const feel=list("feel"),vals=list("values");
+  const L={zh:{feel:"我常常覺得",vals:"我最珍惜的是",step:"所以，這個月請你先做這一件事："},
+           en:{feel:"Most days I feel ",vals:"What I treasure most is ",step:"So this month, please start with this: "},
+           ja:{feel:"わたしはよく、",vals:"いちばん大切にしているのは、",step:"だから今月は、まずこれをしてみて："}}[lang];
+  const feelEnd={zh:"。",en:".",ja:"と感じています。"}[lang],valEnd={zh:"。",en:".",ja:"です。"}[lang];
+  const parts=[];
+  if(feel.length)parts.push(L.feel+join(feel)+feelEnd);
+  for(const id of ["self","home","people","work","scene"]) if((b[id]||"").trim()) parts.push(b[id].trim());
+  if(vals.length)parts.push(L.vals+join(vals)+valEnd);
+  const step=(b.step||"").trim();
+  return {head:yrs?u.letterYears(yrs):u.letterTitle,body:parts,step:step?L.step+step:""};
+}
+function renderLetter(){
+  const u=UI[lang];
+  if(!st.letter){$("letterBox").innerHTML="";return}
+  const L=letterText();
+  if(!L.body.length&&!L.step){$("letterBox").innerHTML=`<p class="hint" style="text-align:center">${u.empty}</p>`;return}
+  $("letterBox").innerHTML=`<div class="letter">
+    <h3>${esc(u.letterTitle)}</h3><p><b>${esc(L.head)}</b></p>
+    ${L.body.map(p=>`<p>${esc(p)}</p>`).join("")}
+    ${L.step?`<p><b>${esc(L.step)}</b></p>`:""}
+    <p class="sig">${u.sig}</p></div>
+    <p class="hint" style="text-align:center">${u.again}</p>
+    <div class="row"><button type="button" class="btn" id="copyLetter">${u.copy}</button></div>`;
+  $("copyLetter").onclick=async()=>{
+    const txt=[u.letterTitle,"",L.head,...L.body,L.step,"",u.sig].filter((x,i)=>x!==undefined).join("\n");
+    try{await navigator.clipboard.writeText(txt);$("copyLetter").textContent=u.copied}catch(e){$("copyLetter").textContent=u.copyFail}
+  };
+}
+$("makeLetter").onclick=()=>{st.letter=true;save();renderLetter();$("letterBox").scrollIntoView({behavior:"smooth",block:"start"})};
+
+function renderSQ(){
+  $("sq").innerHTML=S.map((s,i)=>`<div class="stmt"><p>${i+1}. ${T(s[2])}</p>
+    <div class="scale" role="group" aria-label="${esc(T(s[2]))}">${[1,2,3,4,5].map(v=>`<button type="button" id="s-${i}-${v}" data-i="${i}" data-v="${v}" aria-pressed="${st.sc[i]===v}">${v}</button>`).join("")}</div></div>`).join("");
+  $("sq").querySelectorAll(".scale button").forEach(b=>b.onclick=()=>{st.sc[+b.dataset.i]=+b.dataset.v;save();renderSQ();$(`s-${b.dataset.i}-${b.dataset.v}`).focus()});
+  const n=st.sc.filter(x=>x!==null).length;
+  $("counter").textContent=UI[lang].count(n,S.length);
+}
+function renderStrengths(){
+  const u=UI[lang];
+  if(!st.showS){$("strengthBox").innerHTML="";return}
+  if(st.sc.some(x=>x===null)){$("strengthBox").innerHTML=`<p class="hint" style="text-align:center">${u.need}</p>`;return}
+  const order=S.map((s,i)=>({i,v:st.sc[i]})).sort((a,b)=>b.v-a.v||a.i-b.i);
+  const top=order.slice(0,5);
+  $("strengthBox").innerHTML=`<h3 class="qlabel" style="margin:0;text-align:center">${u.top}</h3>
+    <div class="top5">${top.map((o,r)=>{const s=S[o.i];return `<div class="strength">
+      <div class="name"><span class="rank">${r+1}</span>${T(s[1])}</div>
+      <div class="virtue">${T(VIRTUE[s[0]])}</div>
+      <div class="tip"><b>${u.tryLabel}</b>${T(s[3])}</div></div>`}).join("")}</div>
+    <details><summary>${u.all}</summary><div class="bars" style="margin-top:10px">${order.map(o=>`<div class="bar"><span>${T(S[o.i][1])}</span><span class="track"><span class="fill" style="display:block;width:${o.v*20}%"></span></span><span class="v">${o.v}</span></div>`).join("")}</div></details>`;
+}
+$("showStrengths").onclick=()=>{st.showS=true;save();renderStrengths();$("strengthBox").scrollIntoView({behavior:"smooth",block:"start"})};
+function renderRes(){
+  for(const k of ["r1","r2"]){
+    $(k).innerHTML=RES[k][lang].map(p=>`<p>${p}</p>`).join("")+`<ol class="refs">${REFS[k].map(r=>`<li>${r}</li>`).join("")}</ol>`;
+  }
+  document.querySelectorAll('[data-k="via"]').forEach(e=>e.textContent=VIA_LABEL[lang]);
+}
+setLang(lang);
+</script>
+</body>
+</html>

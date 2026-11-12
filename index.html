@@ -139,24 +139,25 @@ footer .garden{display:block;margin:0 auto;width:min(320px,100%)}
       <use href="#flower" x="222" y="24" width="24" height="24" style="color:var(--petal-a)"/>
       <use href="#flower" x="276" y="16" width="30" height="30" style="color:var(--petal-c)"/>
     </svg>
+    <a class="btn primary" id="t-next" href="future-self.html" style="align-self:center;text-decoration:none"></a>
     <p class="note" id="t-privacy"></p>
   </footer>
 </main>
 <script>
 const UI={
- zh:{eyebrow:"關於自我與人生的八個提問",title:"花開的提問",lead:"這些問題沒有標準答案。先選最接近你的想法，再看看不同觀點，最後把它帶去和朋友聊聊。",
+ zh:{nextpage:"下一站：未來的我與我的優勢 →",eyebrow:"關於自我與人生的八個提問",title:"花開的提問",lead:"這些問題沒有標準答案。先選最接近你的想法，再看看不同觀點，最後把它帶去和朋友聊聊。",
   qnum:(i,n)=>`第 ${i} 題 / 共 ${n} 題`,src:"參考：",prev:"上一題",next:"下一題",done:"看我的答案",talk:"帶去聊聊",
   more:"你的想法（可不填）",ph:"為什麼選這個？有沒有一段經驗讓你這樣想？",yours:"我的答案",none:"（未作答）",
   closing:"好的問題不一定有答案，但會讓我們更了解自己，也更了解身邊的人。",
   copy:"複製我的答案",copied:"已複製，可以貼給朋友了",copyFail:"無法複製，請手動選取",again:"重新開始",
   privacy:"你的答案只存在這台裝置的瀏覽器裡，不會上傳到任何地方。本內容僅供思考與討論，不能取代專業心理諮商。"},
- en:{eyebrow:"Eight questions about yourself and your life",title:"Blooming Questions",lead:"There are no right answers here. Pick what feels closest to you, read another point of view, then take the question to a friend.",
+ en:{nextpage:"Next: Future Self & Strengths →",eyebrow:"Eight questions about yourself and your life",title:"Blooming Questions",lead:"There are no right answers here. Pick what feels closest to you, read another point of view, then take the question to a friend.",
   qnum:(i,n)=>`Question ${i} of ${n}`,src:"Background: ",prev:"Back",next:"Next",done:"See my answers",talk:"Talk it over",
   more:"Your thoughts (optional)",ph:"Why this one? Is there an experience behind it?",yours:"My answers",none:"(not answered)",
   closing:"A good question doesn’t always have an answer, but it helps us understand ourselves and the people around us.",
   copy:"Copy my answers",copied:"Copied — ready to share",copyFail:"Couldn’t copy — please select the text",again:"Start over",
   privacy:"Your answers stay in this browser on this device and are never uploaded. For reflection and conversation only; not a substitute for professional counseling."},
- ja:{eyebrow:"自分と人生をめぐる8つの問い",title:"花ひらく問い",lead:"正解のない問いです。いちばん近いものを選び、別の見方にもふれてから、友だちと話してみてください。",
+ ja:{nextpage:"次へ：未来の私と私の強み →",eyebrow:"自分と人生をめぐる8つの問い",title:"花ひらく問い",lead:"正解のない問いです。いちばん近いものを選び、別の見方にもふれてから、友だちと話してみてください。",
   qnum:(i,n)=>`${n}問中 ${i}問目`,src:"背景：",prev:"前へ",next:"次へ",done:"私の答えを見る",talk:"話してみよう",
   more:"あなたの考え（任意）",ph:"なぜこれを選んだ？そう思うようになった経験はある？",yours:"私の答え",none:"（未回答）",
   closing:"いい問いには、必ずしも答えがありません。でも、自分のことも、まわりの人のことも、もっと深く知るきっかけになります。",
@@ -259,7 +260,7 @@ const petals=["--petal-a","--petal-c","--petal-b"];
 function setLang(l){lang=l;try{localStorage.setItem(LKEY,l)}catch(e){}
   document.documentElement.lang={zh:"zh-Hant",en:"en",ja:"ja"}[l];
   document.querySelectorAll(".lang button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.l===l));
-  const u=UI[l];$("t-eyebrow").textContent=u.eyebrow;$("t-title").textContent=u.title;$("t-lead").textContent=u.lead;$("t-privacy").textContent=u.privacy;
+  const u=UI[l];$("t-eyebrow").textContent=u.eyebrow;$("t-title").textContent=u.title;$("t-lead").textContent=u.lead;$("t-privacy").textContent=u.privacy;$("t-next").textContent=u.nextpage;
   document.title=u.title;render()}
 document.querySelectorAll(".lang button").forEach(b=>b.onclick=()=>setLang(b.dataset.l));
 function progress(){

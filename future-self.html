@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-Hant">
+<html lang="ja">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -128,9 +128,9 @@ footer .garden{display:block;margin:0 auto 8px;width:min(320px,100%)}
   <div class="top">
     <a class="back" href="./" id="t-back"></a>
     <nav class="lang" aria-label="Language">
-      <button type="button" id="lang-zh" data-l="zh">中文</button>
-      <button type="button" id="lang-en" data-l="en">English</button>
       <button type="button" id="lang-ja" data-l="ja">日本語</button>
+      <button type="button" id="lang-en" data-l="en">English</button>
+      <button type="button" id="lang-zh" data-l="zh">中文</button>
     </nav>
   </div>
   <header>
@@ -315,7 +315,7 @@ const KEY="future-strengths-v1",LKEY="blooming-questions-lang";
 let st={bps:{},sc:Array(S.length).fill(null),letter:false,showS:false};
 try{const s=JSON.parse(localStorage.getItem(KEY)||"null");if(s&&s.bps&&Array.isArray(s.sc)&&s.sc.length===S.length)st=s}catch(e){}
 let lang=(()=>{try{const l=localStorage.getItem(LKEY);if(l&&UI[l])return l}catch(e){}
-  const n=(navigator.language||"").toLowerCase();return n.startsWith("ja")?"ja":n.startsWith("zh")?"zh":"en"})();
+  return "ja"})();
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}};
 const $=id=>document.getElementById(id);
 const esc=t=>String(t??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
